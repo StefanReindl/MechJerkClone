@@ -1,6 +1,6 @@
 <section class="game" ng-controller="GameCtrl">
 
-	<div class="{{ board.length }}"></div>
+	<!-- <div class="{{ board.length }}"></div> -->
 
 	<div class="board">
 		<table class="board-table">
@@ -18,13 +18,13 @@
 		        <th>J</th>
 		    </tr>
 
-		    <tr class='board-row' ng-repeat="row in board">
+		    <tr class='board-row' ng-repeat="row in board.rows">
 		        <th>{{$index+1}}</th>
 		        <td ng-repeat='cell in row' class="board-cell board-cell_empty">
-		        	<div ng-click="cell.hit = !cell.hit" class="board-cell-content" data-y="{{cell.y}}" data-x="{{cell.x}}">&nbsp<span ng-if="cell.hit">Hit!</span></div>
+		        	<div ng-click="clickedCell(cell)" class="board-cell-content">&nbsp<span ng-if="cell.hit">Hit!</span></div>
 		        </td>
 		    </tr>
 		   
 		</table>
 	</div>		
-</section>
+</section> 

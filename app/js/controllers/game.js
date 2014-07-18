@@ -4,7 +4,12 @@
 ==================================================================*/
 /*global app*/
 
-app.controller('GameCtrl', ['$scope', function ($scope) {
+
+
+app.controller('GameCtrl', ['$scope', 'board', function ($scope) {
+	$scope.board = board;
+	
+
 
 	'use strict';
 

@@ -1,3 +1,29 @@
-.game {
-	
+body {
+	background-color: #303030;
+	color: white;
+}
+
+.board-table {
+	float: left;
+}
+
+.board-cell {
+	height: 40px;
+	width: 40px;
+	color:white;
+}
+
+.board-cell-content {
+	height: 40px;
+	width: 40px;
+	border-style: solid;
+	border-color: #00FFFF;
+	border-width: 1px;
+	background-color: black;
+	transition: background-color 0.5s linear;
+}
+
+.board-cell-content:hover {
+	border-color: red;
+	border-width: 3px;
 }

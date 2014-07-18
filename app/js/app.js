@@ -4,7 +4,30 @@
 ==================================================================*/
 /*global angular*/
 
-var app = angular.module('battleship', ['ngCookies', 'ngSanitize', 'ngAnimate', 'ui.router']);
+function Cell(x,y) {
+	this.fired = false;
+	this.hit = false;
+	this.x = x;
+	this.y = y;
+	return this;
+}
+
+var board = [];
+
+for (var row = 0; row < 10; row++) {
+	for (var col = 0; col < 10; col++) {
+		if (!board[row]) {
+			board[row] = []
+		}
+		board[row][col] = new Cell(row,col);
+	}
+}
+
+var boardModule = angular.module('boardModule', [])
+	.value('board', board);
+
+
+var app = angular.module('battleship', ['ngCookies', 'ngSanitize', 'ngAnimate', 'ui.router','boardModule']);
 
 
 app.config(['$httpProvider', function ($httpProvider) {

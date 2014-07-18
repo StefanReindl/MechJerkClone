@@ -10,6 +10,7 @@ body {
 .board-cell {
 	height: 40px;
 	width: 40px;
+	color:white;
 }
 
 .board-cell-content {

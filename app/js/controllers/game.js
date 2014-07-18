@@ -6,14 +6,18 @@
 
 
 
-app.controller('GameCtrl', ['$scope', 'board', function ($scope) {
-	$scope.board = board;
-	
+app.controller('GameCtrl', ['$scope', 'Board', function ($scope, Board) {
+	$scope.board = Board.create();
 
 
 	'use strict';
 
 	console.log('Controller ===  GameCtrl');
+
+	$scope.clickedCell = function(cell) {
+		cell.hit = !cell.hit;
+		console.log(cell);
+	};
 }]);
 
 

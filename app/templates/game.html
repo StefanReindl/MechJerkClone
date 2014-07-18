@@ -1,3 +1,350 @@
 <section class="game" ng-controller="GameCtrl">
-GAME GOES HERE	
+
+	<div class="board">
+		<table class="board-table">
+		    <tr class="board-row">
+		        <th></th>
+		        <th>A</th>
+		        <th>B</th>
+		        <th>C</th>
+		        <th>D</th>
+		        <th>E</th>
+		        <th>F</th>
+		        <th>G</th>
+		        <th>H</th>
+		        <th>I</th>
+		        <th>J</th>
+		    </tr>
+		    <tr class="board-row">
+		        <th>1</th>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="0" data-x="0">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="0" data-x="1">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="0" data-x="2">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="0" data-x="3">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="0" data-x="4">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="0" data-x="5">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="0" data-x="6">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="0" data-x="7">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="0" data-x="8">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="0" data-x="9">&nbsp</div>
+		        </td>
+		    </tr>
+		    <tr class="board-row">
+		        <th>2</th>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="1" data-x="0">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="1" data-x="1">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="1" data-x="2">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="1" data-x="3">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="1" data-x="4">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="1" data-x="5">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="1" data-x="6">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="1" data-x="7">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="1" data-x="8">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="1" data-x="9">&nbsp</div>
+		        </td>
+		    </tr>
+		    <tr class="board-row">
+		        <th>3</th>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="2" data-x="0">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="2" data-x="1">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="2" data-x="2">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="2" data-x="3">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="2" data-x="4">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="2" data-x="5">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="2" data-x="6">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="2" data-x="7">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="2" data-x="8">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="2" data-x="9">&nbsp</div>
+		        </td>
+		    </tr>
+		    <tr class="board-row">
+		        <th>4</th>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="3" data-x="0">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="3" data-x="1">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="3" data-x="2">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="3" data-x="3">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="3" data-x="4">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="3" data-x="5">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="3" data-x="6">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="3" data-x="7">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="3" data-x="8">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="3" data-x="9">&nbsp</div>
+		        </td>
+		    </tr>
+		    <tr class="board-row">
+		        <th>5</th>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="4" data-x="0">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="4" data-x="1">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="4" data-x="2">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="4" data-x="3">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="4" data-x="4">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="4" data-x="5">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="4" data-x="6">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="4" data-x="7">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="4" data-x="8">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="4" data-x="9">&nbsp</div>
+		        </td>
+		    </tr>
+		    <tr class="board-row">
+		        <th>6</th>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="5" data-x="0">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="5" data-x="1">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="5" data-x="2">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="5" data-x="3">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="5" data-x="4">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="5" data-x="5">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="5" data-x="6">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="5" data-x="7">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="5" data-x="8">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="5" data-x="9">&nbsp</div>
+		        </td>
+		    </tr>
+		    <tr class="board-row">
+		        <th>7</th>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="6" data-x="0">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="6" data-x="1">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="6" data-x="2">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="6" data-x="3">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="6" data-x="4">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="6" data-x="5">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="6" data-x="6">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="6" data-x="7">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="6" data-x="8">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="6" data-x="9">&nbsp</div>
+		        </td>
+		    </tr>
+		    <tr class="board-row">
+		        <th>8</th>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="7" data-x="0">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="7" data-x="1">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="7" data-x="2">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="7" data-x="3">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="7" data-x="4">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="7" data-x="5">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="7" data-x="6">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="7" data-x="7">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="7" data-x="8">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="7" data-x="9">&nbsp</div>
+		        </td>
+		    </tr>
+		    <tr class="board-row">
+		        <th>9</th>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="8" data-x="0">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="8" data-x="1">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="8" data-x="2">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="8" data-x="3">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="8" data-x="4">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="8" data-x="5">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="8" data-x="6">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="8" data-x="7">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="8" data-x="8">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="8" data-x="9">&nbsp</div>
+		        </td>
+		    </tr>
+		    <tr class="board-row">
+		        <th>10</th>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="9" data-x="0">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="9" data-x="1">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="9" data-x="2">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="9" data-x="3">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="9" data-x="4">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="9" data-x="5">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="9" data-x="6">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="9" data-x="7">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="9" data-x="8">&nbsp</div>
+		        </td>
+		        <td class="board-cell board-cell_empty">
+		        	<div class="board-cell-content" data-y="9" data-x="9">&nbsp</div>
+		        </td>
+		    </tr>
+		</table>
+	</div>		
 </section>

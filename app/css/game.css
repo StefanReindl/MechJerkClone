@@ -1,3 +1,17 @@
-.game {
+.board-table {
 	
+}
+
+.board-cell {
+	height: 40px;
+	width: 40px;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	background-color: teal;
+}
+
+.board-cell-content {
+	height: 30px;
+	width: 30px;
 }

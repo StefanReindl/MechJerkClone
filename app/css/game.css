@@ -1,29 +1,32 @@
 body {
 	background-color: #303030;
 	color: white;
+	text-align: center;
 }
 
 .board-table {
-	float: left;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .board-cell {
 	height: 40px;
 	width: 40px;
-	color:white;
+	color: white;
 }
 
 .board-cell-content {
 	height: 40px;
 	width: 40px;
 	border-style: solid;
-	border-color: #00FFFF;
+	border-color: #339933;
 	border-width: 1px;
-	background-color: black;
-	transition: background-color 0.5s linear;
+	background-color: #003300;
+	transition: background-color 1s ease;
 }
 
 .board-cell-content:hover {
-	border-color: red;
-	border-width: 3px;
+	border-color: white;
+	border-width: 2.5px;
+	background-color: #00CC00;
 }

@@ -17,6 +17,7 @@ app.factory('Board', ['Cell', function (Cell){
 					board.rows[row][col] = Cell.create(row,col);
 				}
 			}
+
 			console.log("board returned!")
 			return board;
 			

@@ -9,7 +9,8 @@
 app.controller('GameCtrl', ['$scope', 'Board', 'WarSocket', function ($scope, Board, WarSocket) {
   'use strict';
 
-	$scope.board = Board.create();
+	$scope.radarBoard = Board.create();
+	$scope.fleetBoard = Board.create();
 
 	console.log('Controller ===  GameCtrl');
 

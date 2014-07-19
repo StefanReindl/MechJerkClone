@@ -97,10 +97,6 @@ app.factory('Board', ['Cell', function (Cell){
 				}
 			}
 
-			// board = {
-			// 	rows: [[1, 2, 3, 4], [1, 2, 3 ,4]]
-			// }
-
 			return board;
 		}
 	}

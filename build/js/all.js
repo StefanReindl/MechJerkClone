@@ -51,13 +51,13 @@ app.run(['$rootScope', function ($rootScope) {
 
 app.controller('GameCtrl', ['$scope', 'Board', 'WarSocket', function ($scope, Board, WarSocket) {
   'use strict';
-  window.warren = $scope;
+
 	$scope.board = Board.create();
 
 	console.log('Controller ===  GameCtrl');
 
 	$scope.clickedCell = function(cell) {
-		cell.hit = !cell.hit;
+		cell.shot = !cell.shot;
 		console.log(cell);
 	};
 
@@ -72,7 +72,7 @@ app.controller('GameCtrl', ['$scope', 'Board', 'WarSocket', function ($scope, Bo
 }]);
 
 
-/*-----  End of Controller = Game  ------*/
+/*-----  End of Controller = Game  ------*/ 
 
 
 
@@ -87,7 +87,7 @@ app.factory('Board', ['Cell', function (Cell){
 			var board = {
 				rows: []
 			}
-			// create a bunch of cells
+			// create a table of 100 cells
 			for (var row = 0; row < 10; row++) {
 				for (var col = 0; col < 10; col++) {
 					if (!board.rows[row]) {
@@ -96,16 +96,13 @@ app.factory('Board', ['Cell', function (Cell){
 					board.rows[row][col] = Cell.create(row,col);
 				}
 			}
-
-			// board = {
-			// 	rows: [[1, 2, 3, 4], [1, 2, 3 ,4]]
-			// }
-
+			console.log("board returned!")
 			return board;
+			
 		}
 	}
 }]);
-
+ 
 
 /*================================================================
 =>                   Service = cell
@@ -116,17 +113,18 @@ app.factory('Cell', function (){
 
 	'use strict';
 	console.log("calling Cell function")
-
+ 
 	return {
 		create: function(x, y) {
 			var cell = {
 			  x: x,
 			  y: y,
-			  fired: false, // cell was fired on
+			  shot: false, // cell was fired on
 			  hit: false    // cell returned a hit
 			  // board_type: board_type;
 			}
 			return cell;
+			console.log("cell returned!")
 		}
 	}
 });

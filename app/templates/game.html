@@ -1,6 +1,6 @@
-<section class="game" ng-controller="GameCtrl">
+<section class="game">
 
-	<!-- <div class="{{ board.length }}"></div> -->
+	<div class="{{ board.length }}"></div>
 
 	<div class="board">
 		<table class="board-table">
@@ -19,20 +19,22 @@
 		    </tr>
 
 		    <tr class='board-row' ng-repeat="row in board.rows">
-		        <th>{{$index+1}}</th>
+		        <th>{{ $index+1 }}</th>
 		        <td ng-repeat='cell in row' class="board-cell board-cell_empty">
-		        	<div ng-click="clickedCell(cell)" class="board-cell-content">&nbsp<span ng-if="cell.hit">Hit!</span></div>
+		        	<div ng-click="clickedCell(cell)" class="board-cell-content">&nbsp<span ng-if="cell.hit">X</span></div>
 		        </td>
 		    </tr>
 		   
 		</table>
-	</div>
-	<div class='chat'>
-		<h4>Battle Chat</h4>
-		<ul>
-			<li ng-repeat="msg in messages">
-				<th>{{msg}}</th>
-			</li>
-		</ul>
-	</div>		
+
+	</div>	
+
+ 	<div class='chat'>
+ 		<h4>Chat window</h4>
+ 		<ul ng-repeat="msg in messages">
+ 			<li>{{ msg }}</li>
+ 		</ul>
+ 	</div>	
+
+
 </section> 

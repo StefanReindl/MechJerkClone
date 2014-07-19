@@ -23,13 +23,14 @@ body {
 .board-table {
 	margin-left: auto;
 	margin-right: auto;
+	display: inline-block;
 }
 
 .board-cell {
 	height: 40px;
 	width: 40px;
 	color: white;
-}
+} 
 
 .board-cell-content {
 	height: 40px;
@@ -52,8 +53,17 @@ body {
 	padding: 10px;
 	height: 300px;
 	width: 300px;
+<<<<<<< HEAD
 	border: 5px solid-green;
 	margin: 1px;
 	
+=======
+	background-color: #003300;
+	border-color: white;
+	border-style: solid;
+	border-width: 1px;
+/*	display: inline-block;*/
+	vertical-align: top;
+>>>>>>> 6409b2dc442bbbad0e20e814b725b1ec83d38764
 }
 

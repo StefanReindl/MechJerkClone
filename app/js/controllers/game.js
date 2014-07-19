@@ -16,6 +16,11 @@ app.controller('GameCtrl', ['$scope', 'Board', 'WarSocket', function ($scope, Bo
 
 	$scope.clickedCell = function(cell) {
 		cell.shot = true;
+		if (cell.ship === true){
+			cell.hit = true;
+		} else {
+			cell.miss = true;
+		}
 		console.log(cell);
 	};
 

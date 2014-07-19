@@ -59,6 +59,11 @@ app.controller('GameCtrl', ['$scope', 'Board', 'WarSocket', function ($scope, Bo
 
 	$scope.clickedCell = function(cell) {
 		cell.shot = true;
+		if (cell.ship === true){
+			cell.hit = true;
+		} else {
+			cell.miss = true;
+		}
 		console.log(cell);
 	};
 
@@ -84,7 +89,7 @@ app.factory('Board', ['Cell', function (Cell){
 	console.log("calling Board function")
 
 	return {
-		create: function(x, y) {
+		create: function(y, x) {
 			var board = {
 				rows: []
 			}
@@ -117,13 +122,14 @@ app.factory('Cell', function (){
 	console.log("calling Cell function")
  
 	return {
-		create: function(x, y) {
+		create: function(y, x) {
 			var cell = {
 			  x: x,
 			  y: y,
 			  shot: false, // cell was fired on
-			  hit: false    // cell returned a hit
-			  // board_type: board_type;
+			  ship: false, // cell has a ship on it
+			  hit: false, // ship occupying this cell has been hit
+			  miss: false // cell was shot but had no ship
 			}
 			return cell;
 			console.log("cell returned!")

@@ -8,6 +8,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	display: inline-block;
+	float: left;
 }
 
 .board-cell {
@@ -32,6 +33,22 @@ body {
 	background-color: #00CC00;
 }
 
+.fleet-board-cell-content {
+	height: 40px;
+	width: 40px;
+	border-style: solid;
+	border-color: #339933;
+	border-width: 1px;
+	background-color: blue;
+	transition: background-color 1s ease;
+}
+
+.fleet-board-cell-content:hover {
+	border-color: white;
+	border-width: 2.5px;
+	background-color: #00CC00;
+}
+
 .chat {
 	color: yellow;
 	padding: 10px;
@@ -43,5 +60,6 @@ body {
 	border-width: 1px;
 /*	display: inline-block;*/
 	vertical-align: top;
+	float: right;
 
 }

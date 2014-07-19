@@ -8,7 +8,7 @@ app.factory('Board', ['Cell', function (Cell){
 			var board = {
 				rows: []
 			}
-			// create a bunch of cells
+			// create a table of 100 cells
 			for (var row = 0; row < 10; row++) {
 				for (var col = 0; col < 10; col++) {
 					if (!board.rows[row]) {
@@ -18,11 +18,9 @@ app.factory('Board', ['Cell', function (Cell){
 				}
 			}
 
-			// board = {
-			// 	rows: [[1, 2, 3, 4], [1, 2, 3 ,4]]
-			// }
-
 			return board;
+			console.log("board returned!")
 		}
 	}
 }]);
+ 

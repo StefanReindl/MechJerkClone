@@ -8,13 +8,13 @@
 
 app.controller('GameCtrl', ['$scope', 'Board', 'WarSocket', function ($scope, Board, WarSocket) {
   'use strict';
-  window.warren = $scope;
+
 	$scope.board = Board.create();
 
 	console.log('Controller ===  GameCtrl');
 
 	$scope.clickedCell = function(cell) {
-		cell.hit = !cell.hit;
+		cell.shot = !cell.shot;
 		console.log(cell);
 	};
 
@@ -29,7 +29,7 @@ app.controller('GameCtrl', ['$scope', 'Board', 'WarSocket', function ($scope, Bo
 }]);
 
 
-/*-----  End of Controller = Game  ------*/
+/*-----  End of Controller = Game  ------*/ 
 
 
 

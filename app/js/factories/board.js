@@ -4,7 +4,7 @@ app.factory('Board', ['Cell', function (Cell){
 	console.log("calling Board function")
 
 	return {
-		create: function(x, y) {
+		create: function(y, x) {
 			var board = {
 				rows: []
 			}

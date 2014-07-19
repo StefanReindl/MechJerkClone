@@ -21,7 +21,7 @@
 		    <tr class='board-row' ng-repeat="row in board.rows">
 		        <th>{{ $index+1 }}</th>
 		        <td ng-repeat='cell in row' class="board-cell board-cell_empty">
-		        	<div ng-click="clickedCell(cell)" class="board-cell-content">&nbsp<span ng-if="cell.hit">X</span></div>
+		        	<div ng-click="clickedCell(cell)" class="board-cell-content">&nbsp<span ng-if="cell.shot">X</span></div>
 		        </td>
 		    </tr>
 		   

@@ -15,7 +15,7 @@ app.controller('GameCtrl', ['$scope', 'Board', 'WarSocket', function ($scope, Bo
 	console.log('Controller ===  GameCtrl');
 
 	$scope.clickedCell = function(cell) {
-		cell.shot = !cell.shot;
+		cell.shot = true;
 		console.log(cell);
 	};
 

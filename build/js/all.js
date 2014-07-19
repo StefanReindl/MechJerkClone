@@ -52,7 +52,8 @@ app.run(['$rootScope', function ($rootScope) {
 app.controller('GameCtrl', ['$scope', 'Board', 'WarSocket', function ($scope, Board, WarSocket) {
   'use strict';
 
-	$scope.board = Board.create();
+	$scope.radarBoard = Board.create();
+	$scope.fleetBoard = Board.create();
 
 	console.log('Controller ===  GameCtrl');
 
@@ -96,6 +97,7 @@ app.factory('Board', ['Cell', function (Cell){
 					board.rows[row][col] = Cell.create(row,col);
 				}
 			}
+
 			console.log("board returned!")
 			return board;
 			

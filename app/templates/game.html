@@ -18,7 +18,7 @@
 		        <th>J</th>
 		    </tr>
 
-		    <tr class='board-row' ng-repeat="row in board.rows">
+		    <tr class='board-row' ng-repeat="row in radarBoard.rows">
 		        <th>{{ $index+1 }}</th>
 		        <td ng-repeat='cell in row' class="board-cell board-cell_empty">
 		        	<div ng-click="clickedCell(cell)" class="board-cell-content">&nbsp<span ng-if="cell.shot">X</span></div>
@@ -45,7 +45,7 @@
 		        <th>J</th>
 		    </tr>
 
-		    <tr class='board-row' ng-repeat="row in board.rows">
+		    <tr class='board-row' ng-repeat="row in fleetBoard.rows">
 		        <th>{{ $index+1 }}</th>
 		        <td ng-repeat='cell in row' class="board-cell board-cell_empty">
 		        	<div ng-click="clickedCell(cell)" class="fleet-board-cell-content">&nbsp<span ng-if="cell.shot">X</span></div>

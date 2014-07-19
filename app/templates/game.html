@@ -58,10 +58,15 @@
 
  	<div class='chat'>
  		<h4>Chat window</h4>
- 		<ul ng-repeat="msg in messages">
- 			<li>{{ msg }}</li>
+ 		<ul ng-repeat="msgChat in messages">
+ 			<li>{{ msgChat }}</li>
  		</ul>
  	</div>	
+
+  <form >
+    <input id="msg" ng-model="msg" autocomplete="off" />
+    <button ng-click="chatForm.sendChat(msg)">Send</button>
+  </form>
 
 
 </section> 

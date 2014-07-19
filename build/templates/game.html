@@ -1,0 +1,37 @@
+<section class="game" ng-controller="GameCtrl">
+
+	<!-- <div class="{{ board.length }}"></div> -->
+
+	<div class="board">
+		<table class="board-table">
+		    <tr class="board-row">
+		        <th></th>
+		        <th>A</th>
+		        <th>B</th>
+		        <th>C</th>
+		        <th>D</th>
+		        <th>E</th>
+		        <th>F</th>
+		        <th>G</th>
+		        <th>H</th>
+		        <th>I</th>
+		        <th>J</th>
+		    </tr>
+
+		    <tr class='board-row' ng-repeat="row in board.rows">
+		        <th>{{$index+1}}</th>
+		        <td ng-repeat='cell in row' class="board-cell board-cell_empty">
+		        	<div ng-click="clickedCell(cell)" class="board-cell-content">&nbsp<span ng-if="cell.hit">Hit!</span></div>
+		        </td>
+		    </tr>
+		   
+		</table>
+	</div>	
+
+	<div class="chat">
+		<h3>Monkey messages</h3>
+		<ul ng-repeat="msg in messages">
+			<li>{{msg}}</li>
+		</ul>
+	</div>	
+</section> 

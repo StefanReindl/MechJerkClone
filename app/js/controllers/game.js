@@ -6,13 +6,11 @@
 
 
 
-app.controller('GameCtrl', ['$scope', 'Board', 'WarSocket', function ($scope, Board, WarSocket) {
+app.controller('GameCtrl', ['$scope', 'Board', 'WarSocket', 'User', function ($scope, Board, WarSocket, User) {
   'use strict';
 
 	$scope.radarBoard = Board.create();
 	$scope.fleetBoard = Board.create();
-
-	console.log('Controller ===  GameCtrl');
 
 	$scope.clickedCell = function(cell) {
 		cell.shot = true;
@@ -23,8 +21,9 @@ app.controller('GameCtrl', ['$scope', 'Board', 'WarSocket', function ($scope, Bo
 		}
 		console.log(cell);
 	};
-	$scope.msg = ''
+
 	$scope.chatForm = {}
+	$scope.msg = ''
   $scope.messages = []
 
   $scope.chatForm.sendChat = function(msg){
@@ -36,12 +35,14 @@ app.controller('GameCtrl', ['$scope', 'Board', 'WarSocket', function ($scope, Bo
   WarSocket.on('sendmessage', function (msg){
     console.log('message sent');
     io.emit('receivemessage', msg);
-    $scope.msg = ' '
   });
 
   WarSocket.on('receivemessage', function (msg){
     console.log("got message", msg);
-    $scope.messages.unshift(msg);
+    $scope.messages.push(msg);
+    $scope.msg = ''
+    var chatWindow = document.getElementsByClassName("chat");
+    chatWindow[0].scrollTop = chatWindow[0].scrollHeight;
   });
 
 }]);

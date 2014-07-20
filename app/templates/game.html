@@ -17,19 +17,15 @@
 		        <th>I</th>
 		        <th>J</th>
 		    </tr>
-
 		    <tr class='board-row' ng-repeat="row in radarBoard.rows">
 		        <th>{{ $index+1 }}</th>
 		        <td ng-repeat='cell in row' class="board-cell board-cell_empty">
 		        	<div ng-click="clickedCell(cell)" class="board-cell-content">&nbsp<span ng-if="cell.shot">X</span></div>
 		        </td>
 		    </tr>
-		   
 		</table>
-
 	</div>
-
-		<div class="board">
+	<div class="board">
 		<table class="board-table">
 		    <tr class="board-row">
 		        <th></th>
@@ -53,20 +49,22 @@
 		    </tr>
 		   
 		</table>
-
 	</div>	
 
  	<div class='chat'>
  		<h4>Chat window</h4>
- 		<ul ng-repeat="msgChat in messages">
+ 		<ul ng-repeat="msgChat in messages track by $index">
  			<li>{{ msgChat }}</li>
  		</ul>
+ 		<div class='msg'>
+	 		<form>
+		    <input id="msg" ng-model="msg" autocomplete="off" size='60' />
+		    <button ng-click="chatForm.sendChat(msg)">Send</button>
+	  	</form>
+  	</div>
  	</div>	
+ 	
 
-  <form >
-    <input id="msg" ng-model="msg" autocomplete="off" />
-    <button ng-click="chatForm.sendChat(msg)">Send</button>
-  </form>
-
+  
 
 </section> 

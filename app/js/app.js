@@ -21,6 +21,11 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         url: '/game',
         templateUrl: 'templates/game.html',
         controller: 'GameCtrl'
+    })
+    .state('home', {
+    	url: '',
+    	templateUrl: 'templates/home.html',
+    	controller: 'UserCtrl'
     });
 }]);
 

@@ -50,27 +50,32 @@ body {
 
 .chat {
 	color: white;
-	padding: 10px;
+	margin: 10px;
 	height: 400px;
-	width: 300px;
+	width: 500px;
 	background-color: #003300;
 	border-color: white;
 	border-style: solid;
 	border-width: 1px;
 	float: right;
 	overflow-y: auto;
+	position: relative;
 }
 
 .chat li {
 	list-style-type: none;
 }
 
-#msg {
+.msg form {
 	color: black;
-}
+	position: absolute;
+	bottom: 0;
+
+} 
             
-form button { 
-	width: 5%; 
+.msg button {  
 	background: black; 
-	border: none; 
+	color: white;
+	border: none;
+
 }

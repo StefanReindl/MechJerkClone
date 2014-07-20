@@ -1,1 +1,11 @@
-<h1>Sample home template</h1>
+
+<section class="main"> 
+	<h3>Enter a username</h3>
+	<h4>{{ username }}</h4> 
+	<div class="username">
+	  <form>
+	    <input id="username" ng-model="username" autocomplete="off" />
+	    <button ng-click="userEnter.enterName(username)">Start</button>
+	  </form>
+  </div>
+</section> 

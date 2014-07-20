@@ -4,16 +4,18 @@
 ==================================================================*/
 /*global app*/
 
-app.controller('UserCtrl', ['$scope', function ($scope) {
+app.controller('UserCtrl', ['$scope', 'User', function ($scope, User) {
 
 	'use strict';
 
-	$scope.username = []
-	$scope.userName = {}
+	$scope.users = []
+	$scope.userEnter = {}
+	$scope.username = ''
 
-	$scope.userName.enterName = function(username){
+	$scope.userEnter.enterName = function(username){
   	console.log('start button hit');
     $scope.user = User.create();
+    $scope.users.push($scope.user);
   };
 
 

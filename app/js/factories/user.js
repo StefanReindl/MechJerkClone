@@ -1,4 +1,4 @@
-app.factory('User', function (){
+app.factory('User', function ($rootScope){
 
 	'use strict';
 	console.log("calling User function")

@@ -1,11 +1,10 @@
 
 <section class="main"> 
 	<h3>Enter a username</h3>
-	<h4>{{ username }}</h4> 
 	<div class="username">
 	  <form>
 	    <input id="username" ng-model="username" autocomplete="off" />
-	    <button ng-click="userEnter.enterName(username)">Start</button>
+	    <a href="#/game"><button ng-click="userEnter.enterName(username)">Start</button></a>
 	  </form>
   </div>
 </section> 

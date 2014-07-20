@@ -53,7 +53,7 @@ body {
 	margin: 10px;
 	height: 400px;
 	width: 500px;
-	background-color: #003300;
+	background-color: black;
 	border-color: white;
 	border-style: solid;
 	border-width: 1px;
@@ -64,6 +64,7 @@ body {
 
 .chat li {
 	list-style-type: none;
+	float: left;
 }
 
 .msg form {
@@ -74,7 +75,7 @@ body {
 } 
             
 .msg button {  
-	background: black; 
+	background: green; 
 	color: white;
 	border: none;
 

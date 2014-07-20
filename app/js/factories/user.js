@@ -11,8 +11,8 @@ app.factory('User', function ($rootScope){
 			  name: username
 			}
 			$rootScope.user = user
-			return user;
 			console.log("user returned!")
+			return user;
 		}
 	}
 });

@@ -56,7 +56,7 @@
  	<div class='chat'>
  		<h4>Comm Log</h4>
  		<ul ng-repeat="msgChat in messages track by $index">
- 			<li>{{ user.name }}: {{ msgChat }}</li></br>
+ 			<li>{{ msgChat.username }}: {{ msgChat.content }}</li></br>
  		</ul>
  		<div class='msg'>
 	 		<form>

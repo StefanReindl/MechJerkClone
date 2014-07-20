@@ -19,8 +19,9 @@ app.factory('Cell', function (){
 			  hit: false, // ship occupying this cell has been hit
 			  miss: false // cell was shot but had no ship
 			}
-			return cell;
 			console.log("cell returned!")
+			return cell;
+			
 		}
 	}
 });

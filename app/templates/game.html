@@ -1,3 +1,5 @@
+
+<h4>Welcome, Admiral {{ user.name }}</h4>
 <section class="game">
 
 	<div class="{{ board.length }}"></div>
@@ -52,9 +54,9 @@
 	</div>	
 
  	<div class='chat'>
- 		<h4>Chat window</h4>
+ 		<h4>Comm Log</h4>
  		<ul ng-repeat="msgChat in messages track by $index">
- 			<li>{{ msgChat }}</li>
+ 			<li>{{ user.name }}: {{ msgChat }}</li></br>
  		</ul>
  		<div class='msg'>
 	 		<form>

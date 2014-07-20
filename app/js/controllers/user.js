@@ -8,18 +8,19 @@ app.controller('UserCtrl', ['$scope', 'User', function ($scope, User) {
 
 	'use strict';
 
-	$scope.users = []
+	console.log('Controller ===  UserCtrl');
+
+	// $scope.users = []
 	$scope.userEnter = {}
 	$scope.username = ''
 
 	$scope.userEnter.enterName = function(username){
   	console.log('start button hit');
-    $scope.user = User.create();
-    $scope.users.push($scope.user);
+    $scope.user = User.create(username);
+    // $scope.users.push(user);
   };
 
 
-	console.log('Controller ===  UserCtrl');
 }]);
 
 

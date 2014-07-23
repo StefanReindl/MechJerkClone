@@ -6,7 +6,7 @@ app.factory('Board', ['Cell', function (Cell){
 	return {
 		create: function(y, x) {
 			var board = {
-				rows: []
+				rows: [],
 			}
 			// create a table of 100 cells
 			for (var row = 0; row < 10; row++) {

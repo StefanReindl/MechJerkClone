@@ -17,7 +17,7 @@ app.controller('UserCtrl', ['$scope', '$cookieStore', 'User', 'WarSocket', 'Game
 		console.log('start button hit');
     $scope.user = User.create(username);
     WarSocket.emit('username', username);
-    $cookieStore.put('user', $scope.user.name);
+    $cookieStore.put('username', username);
     console.log('user created');
 		WarSocket.emit('startgame', username);
   };

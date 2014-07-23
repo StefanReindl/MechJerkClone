@@ -17,7 +17,7 @@ app.controller('UserCtrl', ['$scope', '$cookieStore', 'User', 'WarSocket', 'Game
 		console.log('start button hit');
     $scope.user = User.create(username);
     WarSocket.emit('username', username);
-    $cookieStore.put('username', username);
+    $cookieStore.put('username', $scope.user);
     console.log('user created');
 		WarSocket.emit('startgame', username);
   };
@@ -28,7 +28,7 @@ app.controller('UserCtrl', ['$scope', '$cookieStore', 'User', 'WarSocket', 'Game
 	});  	
 
 	WarSocket.on('game in progress', function (username){
-		console.log('You are player2');
+		console.log('Player2 joined');
 	});
 
 }]);

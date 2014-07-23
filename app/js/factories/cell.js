@@ -10,10 +10,10 @@ app.factory('Cell', function (){
 	console.log("calling Cell function")
  
 	return {
-		create: function(y, x) {
+		create: function(row, col) {
 			var cell = {
-			  x: x,
-			  y: y,
+			  col: col,
+			  row: row,
 			  shot: false, // cell was fired on
 			  ship: false, // cell has a ship on it
 			  hit: false, // ship occupying this cell has been hit

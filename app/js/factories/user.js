@@ -1,17 +1,19 @@
-app.factory('User', function ($rootScope){
+app.factory('User', function (){
 
 	'use strict';
 	console.log("calling User function")
+
+	var user;
  
 	return {
 		create: function(username) {
-			var id = 1;
-			var user = {
-				id: id++,
+			user = {
 			  name: username
 			}
-			$rootScope.user = user
 			console.log("user returned!")
+			return user;
+		},
+		get: function(){
 			return user;
 		}
 	}

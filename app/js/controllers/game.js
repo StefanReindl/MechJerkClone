@@ -6,11 +6,18 @@
 
 
 
-app.controller('GameCtrl', ['$scope', '$rootScope', 'Board', 'WarSocket', 'User', function ($scope, $rootScope, Board, WarSocket, User) {
+app.controller('GameCtrl', ['$scope', '$cookieStore', '$rootScope', 'Board', 'WarSocket', 'User', 'Game', function ($scope, $cookieStore, $rootScope, Board, WarSocket, User, Game) {
   'use strict';
 
-	$scope.radarBoard = Board.create();
+  var user = User.get();
+  $scope.user = user;
+  var game = Game.get();
+
+	user.name = $cookieStore.get('user');
+	console.log($cookieStore);
+
 	$scope.fleetBoard = Board.create();
+	$scope.radarBoard = Board.create();
 
 	$scope.clickedCell = function(cell) {
 		cell.shot = true;
@@ -28,10 +35,10 @@ app.controller('GameCtrl', ['$scope', '$rootScope', 'Board', 'WarSocket', 'User'
 
   $scope.chatForm.sendChat = function(msg){
   	console.log('chat send button hit');
-    console.log($rootScope.user + ' send message: ' + msg);
+    console.log(user + ' send message: ' + msg);
 
     var message = {
-      username: $rootScope.user.name,
+      username: user.name,
       content: msg
     };
 
@@ -42,7 +49,7 @@ app.controller('GameCtrl', ['$scope', '$rootScope', 'Board', 'WarSocket', 'User'
   WarSocket.on('sendmessage', function (msg){
     console.log('message sent');
     io.emit('receivemessage', msg);
-  });
+  });	
 
   WarSocket.on('receivemessage', function (message){
     console.log("got message");

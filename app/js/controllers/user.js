@@ -4,22 +4,32 @@
 ==================================================================*/
 /*global app*/
 
-app.controller('UserCtrl', ['$scope', 'User', function ($scope, User) {
+app.controller('UserCtrl', ['$scope', '$cookieStore', 'User', 'WarSocket', 'Game', function ($scope, $cookieStore, User, WarSocket, Game) {
 
 	'use strict';
 
 	console.log('Controller ===  UserCtrl');
 
-	// $scope.users = []
-	$scope.userEnter = {}
 	$scope.username = ''
+	$scope.userEnter = {}
 
 	$scope.userEnter.enterName = function(username){
-  	console.log('start button hit');
+		console.log('start button hit');
     $scope.user = User.create(username);
-    // $scope.users.push(user);
+    WarSocket.emit('username', username);
+    $cookieStore.put('user', $scope.user.name);
+    console.log('user created');
+		WarSocket.emit('startgame', username);
   };
 
+	WarSocket.on('creategame', function (username){
+  	$scope.game = Game.create(username);
+  	console.log('game created! user is player1');
+	});  	
+
+	WarSocket.on('game in progress', function (username){
+		console.log('You are player2');
+	});
 
 }]);
 

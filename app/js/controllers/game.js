@@ -6,7 +6,7 @@
 
 
 
-app.controller('GameCtrl', ['$scope', '$cookieStore', '$rootScope', 'Board', 'WarSocket', 'User', 'Game', 'Cell', function ($scope, $cookieStore, $rootScope, Board, WarSocket, User, Game, Cell) {
+app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 'Board', 'WarSocket', 'User', 'Game', 'Cell', function ($scope, $timeout, $cookieStore, $rootScope, Board, WarSocket, User, Game, Cell) {
   'use strict';
 
   var user = User.get();
@@ -26,6 +26,12 @@ app.controller('GameCtrl', ['$scope', '$cookieStore', '$rootScope', 'Board', 'Wa
     console.log(cell);
     if (active_user) {
       $scope.clickedCell(cell);
+    } else {
+      $scope.alertMessage = true;
+      $timeout(function(){
+        console.log('timeout function hit')
+        $scope.alertMessage = false
+      }, 2000);
     };
   };
 
@@ -62,7 +68,7 @@ app.controller('GameCtrl', ['$scope', '$cookieStore', '$rootScope', 'Board', 'Wa
     $scope.radarBoard.getCell(cell.row, cell.col).hit = true;
     WarSocket.emit('turn complete');
     active_user = false;
-    console.log('Ship hit at ' + cell.x + ', ' + cell.y);
+    console.log('Ship hit at ' + cell.row + ', ' + cell.col);
   });
 
   // show miss on active_user's radarBoard

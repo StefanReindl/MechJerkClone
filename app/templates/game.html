@@ -3,9 +3,11 @@
 
 <section class="game">
 
-  <div class="alert">Alert!!!</div>
-  <div class="{{ board.length }}"></div>
+  <div class="popup">
+    <div id='alert' ng-show="alertMessage" class="ng-hide">Wait Your Turn</div>
+  </div>
 
+  <div class="{{ board.length }}"></div>
   <div class="board first">
     <table class="board-table">
         <tr class="board-row">

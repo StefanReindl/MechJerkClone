@@ -13,11 +13,33 @@ body {
 	text-align: center;
 }
 
+.game {
+	position: relative;
+}
+
+.board {
+	display: inline-block;
+}
+
+.board.first {
+	padding-right: 80px;
+}
+
+.alert {
+	width: 100%;
+	height: 80px;
+	background-color: red;
+	font-size: 30px;
+	color: white;
+	opacity: 0.7;	
+	top: 30%;
+	position: absolute;
+	z-index: 1;
+}
+
 .board-table {
 	margin-left: auto;
 	margin-right: auto;
-	display: inline-block;
-	float: left;
 	padding: 30px;
 }
 
@@ -60,15 +82,14 @@ body {
 .chat {
 	color: white;
 	margin: 10px;
-	height: 400px;
-	width: 500px;
-	background-color: black;
-	border-color: white;
-	border-style: solid;
-	border-width: 1px;
-	float: right;
-	overflow-y: auto;
+	height: 150px;
+	width: 60%;
+	opacity: 0.5;
+	overflow-y: hidden;
 	position: relative;
+	float: left;
+	padding-left: 50px;
+	padding-top: 10px;
 }
 
 .chat li {
@@ -78,14 +99,14 @@ body {
 
 .msg form {
 	color: black;
-	position: absolute;
 	bottom: 0;
-
+	float: left;
+	padding-left: 50px;
+	padding-top: 10px;
 } 
             
 .msg button {  
 	background: green; 
 	color: white;
 	border: none;
-
 }

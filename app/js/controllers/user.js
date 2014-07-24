@@ -13,6 +13,7 @@ app.controller('UserCtrl', ['$scope', '$cookieStore', 'User', 'WarSocket', 'Game
 	$scope.username = ''
 	$scope.userEnter = {}
 
+
 	$scope.userEnter.enterName = function(username){
 		console.log('start button hit');
     $scope.user = User.create(username);

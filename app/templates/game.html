@@ -22,7 +22,7 @@
 		    <tr class='board-row' ng-repeat="row in radarBoard.rows">
 		        <th>{{ $index+1 }}</th>
 		        <td ng-repeat='cell in row' class="board-cell board-cell_empty">
-		        	<div ng-click="clickedCell(cell)" class="board-cell-content">&nbsp<span ng-if="cell.shot">Shot</span><span ng-if="cell.hit">Hit</span><span ng-if="cell.miss">Miss</span></div>
+		        	<div ng-click="check(cell)" class="board-cell-content">&nbsp<span ng-if="cell.shot">Shot</span><span ng-if="cell.hit">Hit</span><span ng-if="cell.miss">Miss</span></div>
 		        </td>
 		    </tr>
 		</table>

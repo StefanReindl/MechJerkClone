@@ -12,20 +12,36 @@ app.controller('GameCtrl', ['$scope', '$cookieStore', '$rootScope', 'Board', 'Wa
   var user = User.get();
   $scope.user = user;
   var game = Game.get();
+  var active_user = false;
 
 	$scope.user = $cookieStore.get('username');
 
 	$scope.fleetBoard = Board.create();
 	$scope.radarBoard = Board.create();
 
-	// activeplayer makes shot
+
+	// checks if click performed by active_user
+	$scope.check = function(cell){
+		console.log('checking if active_user');
+		console.log(cell);
+		if (active_user) {
+			$scope.clickedCell(cell);
+		};
+	};
+
+	// active_user makes shot
+	WarSocket.on('Your turn', function(){
+		active_user = true;
+		console.log('Your turn, ' + $scope.user.username);
+	});
+
 	$scope.clickedCell = function(cell) {
 		cell.shot = true;
 		WarSocket.emit('shot', cell);
 		console.log('shot fired on ' + cell);			
 	};
 
-	// check if shot from activeplayer is hit/miss, show on fleetBoard
+	// check if shot from active_user is hit/miss, show on fleetBoard
 	WarSocket.on('shot', function (cell){
 		console.log('Incoming shot!!!')
 		var my_cell = $scope.fleetBoard.getCell(cell.row, cell.col);
@@ -41,15 +57,19 @@ app.controller('GameCtrl', ['$scope', '$cookieStore', '$rootScope', 'Board', 'Wa
 		};
 	});
 
-	// show hit on activeplayer's radarBoard
+	// show hit on active_user's radarBoard
 	WarSocket.on('hit', function (cell){
 		$scope.radarBoard.getCell(cell.row, cell.col).hit = true;
+		WarSocket.emit('turn complete');
+		active_user = false;
 		console.log('Ship hit at ' + cell.x + ', ' + cell.y);
 	});
 
-	// show miss on activeplayer's radarBoard
+	// show miss on active_user's radarBoard
 	WarSocket.on('miss', function (cell){
 		$scope.radarBoard.getCell(cell.row, cell.col).miss = true;
+		WarSocket.emit('turn complete');
+		active_user = false;
 		console.log('Turkey giblets');
 	});
 

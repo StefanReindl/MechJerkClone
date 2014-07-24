@@ -8,7 +8,7 @@ app.factory('User', function (){
 	return {
 		create: function(username) {
 			user = {
-			  name: username
+			  username: username
 			}
 			console.log("user returned!")
 			return user;

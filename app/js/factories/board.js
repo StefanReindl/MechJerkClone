@@ -4,9 +4,12 @@ app.factory('Board', ['Cell', function (Cell){
 	console.log("calling Board function")
 
 	return {
-		create: function(y, x) {
+		create: function(row, col) {
 			var board = {
 				rows: [],
+				getCell: function(row, col) {
+					return this.rows[row][col];
+				}
 			}
 			// create a table of 100 cells
 			for (var row = 0; row < 10; row++) {

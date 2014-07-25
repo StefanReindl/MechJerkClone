@@ -30,6 +30,10 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
 
   // checks if click performed by active_user
   $scope.check = function(cell){
+    if ($scope.chooseAgain === true){
+      console.log('motherclucker');
+      return;
+    };
     var my_cell = $scope.radarBoard.getCell(cell.row, cell.col);
     console.log('checking if active_user & shot legal');
     console.log(my_cell);

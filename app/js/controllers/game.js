@@ -40,12 +40,12 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
       $scope.chooseAgain = true;
       $timeout(function(){
         $scope.chooseAgain = false;
-      }, 2000);
+      }, 1100);
     } else {
       $scope.notTurnAlert = true;
       $timeout(function(){
         $scope.notTurnAlert = false;
-      }, 2000);
+      }, 1100);
     };
   };
 

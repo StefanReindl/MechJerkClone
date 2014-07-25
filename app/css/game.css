@@ -1,48 +1,48 @@
 * {
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body {
-	background-color: #303030;
-	color: white;
-	text-align: center;
+  background-color: #303030;
+  color: white;
+  text-align: center;
 }
 
 .status {
-	width: 200px;
-	height: 25px;
-	background-color: green;
-	color: white;
-	font-size: 18px;
-	margin-left: auto;
-	margin-right: auto;
-	opacity: 0.8;
+  width: 200px;
+  height: 25px;
+  background-color: green;
+  color: white;
+  font-size: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.8;
 }
 
 #wait {
-	background-color: red;
+  background-color: red;
 }
 
 #alert {
-	width: 100%;
-	height: 50px;
-	top: 27%;
-	background-color: red;
-	font-size: 30px;
-	color: white;
-	position: absolute;
-	z-index: 1;
-	opacity: 0.8;
-	transition: 4s all linear;
+  width: 100%;
+  height: 50px;
+  top: 27%;
+  background-color: red;
+  font-size: 30px;
+  color: white;
+  position: absolute;
+  z-index: 1;
+  opacity: 0.8;
+  transition: 1.6s all linear;
 }
 
 #alert.ng-hide-remove, #alert.ng-hide-add {
-	display: block !important;
+  display: block !important;
 }
 
 #alert.ng-hide-remove, #alert.ng-hide-add.ng-hide-add-active{
@@ -54,88 +54,88 @@ body {
 }
 
 .game {
-	position: relative;
+  position: relative;
 }
 
 .board {
-	display: inline-block;
-	padding-top: 20px;
+  display: inline-block;
+  padding-top: 20px;
 }
 
 .board.first {
-	padding-right: 80px;
+  padding-right: 80px;
 }
 
 .board-table {
-	margin-left: auto;
-	margin-right: auto;
-	padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
 }
 
 .board-cell {
-	height: 40px;
-	width: 40px;
-	color: white;
+  height: 40px;
+  width: 40px;
+  color: white;
 } 
 
 .board-cell-content {
-	height: 40px;
-	width: 40px;
-	border-style: solid;
-	border-color: #339933;
-	border-width: 1px;
-	background-color: #003300;
-	transition: background-color 1s ease;
+  height: 40px;
+  width: 40px;
+  border-style: solid;
+  border-color: #339933;
+  border-width: 1px;
+  background-color: #003300;
+  transition: background-color 1s ease;
 }
 
 .board-cell-content:hover {
-	border-color: white;
-	border-width: 2.5px;
-	background-color: #00CC00;
+  border-color: white;
+  border-width: 2.5px;
+  background-color: #00CC00;
 }
 
 .fleet-board-cell-content {
-	height: 40px;
-	width: 40px;
-	border-style: solid;
-	border-color: black;
-	border-width: 1px;
-	background-color: #33CCFF;
+  height: 40px;
+  width: 40px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  background-color: #33CCFF;
 }
 
 .fleet-board-cell-content:hover {
-	border-color: white;
-	border-width: 2.5px;
+  border-color: white;
+  border-width: 2.5px;
 }
 
 .chat {
-	color: white;
-	margin: 5px;
-	height: 150px;
-	width: 60%;
-	opacity: 0.5;
-	overflow-y: hidden;
-	position: relative;
-	float: right;
-	padding-left: 50px;
-	padding-top: 10px;
+  color: white;
+  margin: 5px;
+  height: 150px;
+  width: 60%;
+  opacity: 0.5;
+  overflow-y: hidden;
+  position: relative;
+  float: right;
+  padding-left: 50px;
+  padding-top: 10px;
 }
 
 .chat li {
-	list-style-type: none;
-	float: left;
+  list-style-type: none;
+  float: left;
 }
 
 .msg form {
-	color: black;
-	bottom: 0;
-	float: left;
-	padding-left: 50px;
-	padding-top: 10px;
+  color: black;
+  bottom: 0;
+  float: left;
+  padding-left: 50px;
+  padding-top: 10px;
 } 
             
 .msg button {  
-	background: green; 
-	color: white;
-	border: none;
+  background: green; 
+  color: white;
+  border: none;
 }

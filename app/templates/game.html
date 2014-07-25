@@ -10,56 +10,34 @@
   </div>  
 
   <div class='popup'  
-    <div id='alert' ng-show="notTurnAlert" class="ng-hide">Seriously dude, wait your turn.</div>
+    <div id='alert' ng-show="notTurnAlert" class="ng-hide">Seriously, dude, wait your turn.</div>
   </div>
 
   <div class="{{ board.length }}"></div>
   <div class="board first">
     <table class="board-table">
         <tr class="board-row">
-            <th></th>
-            <th>A</th>
-            <th>B</th>
-            <th>C</th>
-            <th>D</th>
-            <th>E</th>
-            <th>F</th>
-            <th>G</th>
-            <th>H</th>
-            <th>I</th>
-            <th>J</th>
         </tr>
         <tr class='board-row' ng-repeat="row in radarBoard.rows">
-            <th>{{ $index+1 }}</th>
             <td ng-repeat='cell in row' class="board-cell board-cell_empty">
               <div ng-click="check(cell)" class="board-cell-content">&nbsp<span ng-if="cell.shot">Shot</span><span ng-if="cell.hit">Hit</span><span ng-if="cell.miss">Miss</span></div>
             </td>
         </tr>
     </table>
   </div>
+
   <div class="board">
     <table class="board-table">
         <tr class="board-row">
-            <th></th>
-            <th>A</th>
-            <th>B</th>
-            <th>C</th>
-            <th>D</th>
-            <th>E</th>
-            <th>F</th>
-            <th>G</th>
-            <th>H</th>
-            <th>I</th>
-            <th>J</th>
         </tr>
         <tr class='board-row' ng-repeat="row in fleetBoard.rows">
-            <th>{{ $index+1 }}</th>
             <td ng-repeat='cell in row' class="board-cell board-cell_empty">
               <div class="fleet-board-cell-content">&nbsp<span ng-if="cell.hit">Hit</span><span ng-if="cell.miss">Miss</span></div>
             </td>
         </tr>
     </table>
   </div>  
+  
   <div class='msg'>
     <form>
       <input id="msg" ng-model="msg" type='text' placeholder="Fraternize with the enemy" size='60' />

@@ -9,35 +9,49 @@ var app = angular.module('battleship', ['ngCookies', 'ngSanitize', 'ngAnimate', 
 
 
 app.config(['$httpProvider', function ($httpProvider) {
-	'use strict';
+  'use strict';
 
-	// This is required for Browser Sync to work poperly
-	$httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+    // This is required for Browser Sync to work poperly
+  $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 }]);
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('game', {
-        url: '/game',
-        templateUrl: 'templates/game.html',
-        controller: 'GameCtrl'
+      url: '/game',
+      templateUrl: 'templates/game.html',
+      controller: 'GameCtrl'
     })
     .state('home', {
-    	url: '',
-    	templateUrl: 'templates/home.html',
-    	controller: 'UserCtrl'
+      url: '',
+      templateUrl: 'templates/home.html',
+      controller: 'UserCtrl'
     });
 }]);
+
+app.directive('onFinishRender', function ($timeout) {
+     console.log('hairy armpits')
+  return {
+    restrict: 'A',
+    link: function (scope, element, attr) {
+      if (scope.$last === true) {
+        $timeout(function () {
+          scope.$emit('ngRepeatFinished');
+        });
+      }
+    }
+  }
+});    
 
 /*================================================================
 =>                  battleship App Run()  
 ==================================================================*/
 
 app.run(['$rootScope', function ($rootScope) {
-	
-	'use strict';
+    
+    'use strict';
 
-	console.log('Angular.js run() function...');
+    console.log('Angular.js run() function...');
 }]);
 
 

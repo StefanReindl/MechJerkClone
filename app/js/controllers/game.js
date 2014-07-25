@@ -13,6 +13,8 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   $scope.user = user;
   var game = Game.get();
   var active_user = false;
+  $scope.waitAlert = true;
+  $scope.gameOver = false;
 
   $scope.user = $cookieStore.get('username');
 
@@ -27,10 +29,10 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
     if (active_user) {
       $scope.clickedCell(cell);
     } else {
-      $scope.alertMessage = true;
+      $scope.notTurnAlert = true;
       $timeout(function(){
         console.log('timeout function hit')
-        $scope.alertMessage = false
+        $scope.notTurnAlert = false
       }, 2000);
     };
   };
@@ -38,6 +40,8 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   // active_user makes shot
   WarSocket.on('Your turn', function(){
     active_user = true;
+    $scope.turnAlert = true;
+    $scope.waitAlert = false;
     console.log('Your turn, ' + $scope.user.username);
   });
 
@@ -68,6 +72,8 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
     $scope.radarBoard.getCell(cell.row, cell.col).hit = true;
     WarSocket.emit('turn complete');
     active_user = false;
+    $scope.turnAlert = false;
+    $scope.waitAlert = true;
     console.log('Ship hit at ' + cell.row + ', ' + cell.col);
   });
 
@@ -76,6 +82,8 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
     $scope.radarBoard.getCell(cell.row, cell.col).miss = true;
     WarSocket.emit('turn complete');
     active_user = false;
+    $scope.turnAlert = false;
+    $scope.waitAlert = true;
     console.log('Turkey giblets');
   });
 

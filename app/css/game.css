@@ -13,8 +13,19 @@ body {
 	text-align: center;
 }
 
-.game {
-	position: relative;
+.status {
+	width: 15%;
+	height: 25px;
+	background-color: green;
+	color: white;
+	font-size: 18px;
+	margin-left: auto;
+	margin-right: auto;
+	opacity: 0.8;
+}
+
+#wait {
+	background-color: red;
 }
 
 #alert {
@@ -40,6 +51,10 @@ body {
 
 #alert.ng-hide-remove.ng-hide-remove-active, #alert.ng-hide-add{
     opacity: 0;
+}
+
+.game {
+	position: relative;
 }
 
 .board {

@@ -3,8 +3,14 @@
 
 <section class="game">
 
-  <div class="popup">
-    <div id='alert' ng-show="alertMessage" class="ng-hide">Wait Your Turn</div>
+  <div class="status">
+    <div id='go' ng-show='turnAlert' class='ng-hide'>It's your turn!</div>
+    <div id='wait' ng-show='waitAlert' class='ng-hide'>Wait for incoming shot</div>
+    <div id='wait' ng-show='gameOver' class='ng-hide'>GAME OVER</div>
+  </div>  
+
+  <div class='popup'  
+    <div id='alert' ng-show="notTurnAlert" class="ng-hide">Seriously dude, wait your turn.</div>
   </div>
 
   <div class="{{ board.length }}"></div>

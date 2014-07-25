@@ -14,7 +14,7 @@ body {
 }
 
 .status {
-	width: 15%;
+	width: 200px;
 	height: 25px;
 	background-color: green;
 	color: white;

@@ -11,6 +11,7 @@
 
   <div class='popup'  
     <div id='alert' ng-show="notTurnAlert" class="ng-hide">Seriously, dude, wait your turn.</div>
+    <div id='alert' ng-show='chooseAgain' class='ng-hide'>Cell already shot! Choose again.</div>
   </div>
 
   <div class="{{ board.length }}"></div>
@@ -43,7 +44,7 @@
       <input id="msg" ng-model="msg" type='text' placeholder="Fraternize with the enemy" size='60' />
       <button ng-click="chatForm.sendChat(msg)">Send</button>
     </form>
-  </div> 
+  </div>  
   <div class='chat'>
     <ul ng-repeat="msgChat in messages track by $index" on-finish-render >
       <li>{{ msgChat.username }}: {{ msgChat.content }}</li></br>

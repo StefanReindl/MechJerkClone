@@ -4,39 +4,22 @@
 ==================================================================*/
 /*global app*/
 
-
-
 app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 'Board', 'WarSocket', 'User', 'Game', 'Cell', function ($scope, $timeout, $cookieStore, $rootScope, Board, WarSocket, User, Game, Cell) {
   'use strict';
 
   var user = User.get();
   $scope.user = user;
-  var game = Game.get();
-  var active_user = false;
-  $scope.waitAlert = true;
-  $scope.gameOver = false;
-
   $scope.user = $cookieStore.get('username');
+  var active_user = false;
 
+  var game = Game.get();
   $scope.fleetBoard = Board.create();
   $scope.radarBoard = Board.create();
 
-
-  // checks if click performed by active_user
-  $scope.check = function(cell){
-    console.log('checking if active_user');
-    console.log(cell);
-    if (active_user) {
-      $scope.clickedCell(cell);
-    } else {
-      $scope.notTurnAlert = true;
-      $timeout(function(){
-        console.log('timeout function hit')
-        $scope.notTurnAlert = false
-      }, 2000);
-    };
-  };
-
+  $scope.waitAlert = true;
+  $scope.gameOver = false;
+  $scope.chooseAgain = false;
+  
   // active_user makes shot
   WarSocket.on('Your turn', function(){
     active_user = true;
@@ -45,6 +28,28 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
     console.log('Your turn, ' + $scope.user.username);
   });
 
+  // checks if click performed by active_user
+  $scope.check = function(cell){
+    var my_cell = $scope.radarBoard.getCell(cell.row, cell.col);
+    console.log('checking if active_user & shot legal');
+    console.log(my_cell);
+    if (active_user && my_cell.shot === false) {
+      $scope.clickedCell(cell);
+    } else if (active_user){
+      console.log('choose again');
+      $scope.chooseAgain = true;
+      $timeout(function(){
+        $scope.chooseAgain = false;
+      }, 2000);
+    } else {
+      $scope.notTurnAlert = true;
+      $timeout(function(){
+        $scope.notTurnAlert = false;
+      }, 2000);
+    };
+  };
+
+  // active_user selects cell to shoot, cell sent to socket
   $scope.clickedCell = function(cell) {
     cell.shot = true;
     WarSocket.emit('shot', cell);

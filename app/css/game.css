@@ -108,6 +108,19 @@ body {
 	border-width: 2.5px;
 }
 
+.navbar-inner {
+	z-index: 1;
+	height: 60px;
+	width: 350px;
+	background-color: white;
+	margin: auto;
+}
+
+p {
+	
+	color: black;
+}
+
 .chat {
 	color: white;
 	margin: 5px;

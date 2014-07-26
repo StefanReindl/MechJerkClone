@@ -1,7 +1,7 @@
 
 <h4>Welcome, Admiral {{ user.username }}</h4>
 
-<section class="game">
+<div class="game">
 
   <div class="status">
     <div id='go' ng-show='turnAlert' class='ng-hide'>It's your turn!</div>
@@ -26,7 +26,14 @@
     </table>
   </div>
 
-  <div class="board">
+  
+
+
+
+  <div class="board" data-drop="true" ng-model='ship' data-jqyoui-options="optionsboard" jqyoui-droppable="{multiple:true}">
+  	<div class="caption">
+      <div class="ship ship-info ship-draggable" ng-repeat="item in board" ng-show="item.title" data-drag="{{item.drag}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="board" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.title}}</div>
+    </div>
     <table class="board-table">
         <tr class="board-row">
         </tr>
@@ -36,8 +43,31 @@
             </td>
         </tr>
     </table>
-  </div>  
-  
+  </div>
+  	  
+
+			<div class="navbar-inner">
+			<script src="angular-dragdrop.min.js"></script>
+    	<script src="ship.js"></script>
+    		<div class="ship" data-drag="true" jqyoui-draggable="{animate:true}"><p>LS</p></div>
+		    	<style>
+		    		.ship {width: 35px; height: 35px; background-color: red;}
+		      	.ship-droppable { width: 60px; height: 40px; padding-left: 4px; }
+		      	.ship-draggable { width: 40px; }
+		    	</style>
+				
+        <div class="container form-inline" style="text-align: center;">
+          <div class="ship ship-droppable" data-drag="true" data-drop="true">
+            <div class="ship ship-info ship-draggable" data-drag="{{item.drag}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="list5" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}" ng-hide="!item.title">{{item.title}}</div>
+          </div>
+        </div>
+      </div>  
+
+
+
+
+
+
   <div class='msg'>
     <form>
       <input id="msg" ng-model="msg" type='text' placeholder="Fraternize with the enemy" size='60' />

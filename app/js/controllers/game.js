@@ -17,10 +17,11 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   $scope.radarBoard = Board.create();
 
   $scope.waitAlert = true;
-  $scope.gameOver = false;
   $scope.chooseAgain = false;
+  $scope.gameOver = false;
+
   
-  // active_user makes shot
+  // active_user assigned
   WarSocket.on('Your turn', function(){
     active_user = true;
     $scope.turnAlert = true;
@@ -28,16 +29,15 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
     console.log('Your turn, ' + $scope.user.username);
   });
 
-  // checks if click performed by active_user
+  // checks if click performed by active_user & unclicked cell clicked
   $scope.check = function(cell){
-    if ($scope.chooseAgain === true){
-      console.log('motherclucker');
+    var my_cell = $scope.radarBoard.getCell(cell.row, cell.col);
+    if ($scope.chooseAgain === true){ // this bugfix could use work
+      console.log('motherclucker multiclick');
       return;
     };
-    var my_cell = $scope.radarBoard.getCell(cell.row, cell.col);
-    console.log('checking if active_user & shot legal');
-    console.log(my_cell);
     if (active_user && my_cell.shot === false) {
+      console.log('checking if active_user & shot legal on cell: ' + my_cell)
       $scope.clickedCell(cell);
     } else if (active_user){
       console.log('choose again');
@@ -46,6 +46,10 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
         $scope.chooseAgain = false;
       }, 1100);
     } else {
+      if ($scope.notTurnAlert === true){ // this bugfix could use work
+        console.log('notTurnAlert multiclick')
+        return;
+      };
       $scope.notTurnAlert = true;
       $timeout(function(){
         $scope.notTurnAlert = false;
@@ -100,7 +104,6 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   $scope.msg = ''
   $scope.messages = []
   
-
   $scope.chatForm.sendChat = function(msg){
     console.log('chat send button hit');
     console.log($scope.user + ' send message: ' + msg);

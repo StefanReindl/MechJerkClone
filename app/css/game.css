@@ -53,23 +53,19 @@ body {
     opacity: 0;
 }
 
-.game {
-  position: relative;
-}
-
 .board {
   display: inline-block;
+  position: relative;
+  vertical-align: top;
   padding-top: 20px;
 }
 
-.board.first {
-  padding-right: 80px;
+.board.radar {
+  padding-right: 40px;
 }
 
-.board-table {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 30px;
+.board.fleet {
+  padding-left: 40px;
 }
 
 .board-cell {
@@ -108,29 +104,10 @@ body {
   border-width: 2.5px;
 }
 
-.chat {
-  color: white;
-  margin: 5px;
-  height: 150px;
-  width: 600px;
-  opacity: 0.5;
-  overflow-y: hidden;
-  position: relative;
-  display: inline-block;
-  float: right;
-  padding-top: 10px;
-}
-
-.chat li {
-  list-style-type: none;
-  float: left;
-}
-
 .msg form {
   color: black;
   bottom: 0;
   float: left;
-  padding-left: 190px;
   padding-top: 10px;
   display: inline-block;
 } 
@@ -141,3 +118,20 @@ body {
   border: none;
   display: inline-block;
 }
+
+.chat {
+  color: white;
+  margin: 5px;
+  height: 150px;
+  width: 400px;
+  opacity: 0.5;
+  overflow-y: hidden;
+  display: inline-block;
+  padding-top: 10px;
+}
+
+.chat li {
+  list-style-type: none;
+  float: left;
+}
+

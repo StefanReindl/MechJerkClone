@@ -30,31 +30,128 @@
 
 
 
-  <div class="board" data-drop="true" ng-model='ship' data-jqyoui-options="optionsboard" jqyoui-droppable="{multiple:true}">
-  	<div class="caption">
-      <div class="ship ship-info ship-draggable" ng-repeat="item in board" ng-show="item.title" data-drag="{{item.drag}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="board" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.title}}</div>
-    </div>
-    <table class="board-table">
-        <tr class="board-row">
-        </tr>
-        <tr class='board-row' ng-repeat="row in fleetBoard.rows">
+  <div id="board" ></div>
+  	
+    
+    <table class="board-table" ondrop="drop(event)" ondragover="allowDrop(event)"  >
+        <!-- <tr class="board-row">
+        </tr> -->
+        <body>
+
+		<ol>
+        <div class="boat" id="single" draggable="true" ondragstart="drag(event)">
+					 <style> #single {
+float: left;
+margin-top: -16px;
+margin-left: 3px;
+width: 32px;
+height: 72px;
+background-color: grey;
+position: absolute;}
+					 </style>
+
+				<div class="boat" id="double" draggable="true" ondragstart="drag(event)">
+					<style> #double {
+						float: left;
+					margin-top: -16px;
+margin-left: 3px;
+width: 73px;
+height: 32px;
+background-color: yellow;
+position: absolute;
+					}
+
+
+					</style>
+				<div class= "boat" id="tripleV" draggable="true" ondragstart="drag(event)">
+					<style> #tripleV {
+margin-top: -18px;
+margin-left: 3px;
+width: 32px;
+height: 116px;
+background-color: red;
+position: absolute;
+					}
+					</style>
+		<div class= "boat" id="tripleVI" draggable="true" ondragstart="drag(event)">
+					<style> #tripleVI {
+						float: right;
+margin-top: -18px;
+margin-left: 3px;
+width: 32px;
+height: 116px;
+background-color: orange;
+position: absolute;
+					}
+					</style>					
+		<div class= "boat" id="stefan" draggable="true" ondragstart="drag(event)">
+				<style> #stefan {
+					position:absolute;
+					margin-top: -16px;
+					margin-left: 3px;
+					height: 32px;
+					width: 192px;
+					background-color: brown;
+				}
+
+				</style>
+		<div class="boat" id="warren" draggable="true" ondragstart="drag(event)">
+			<style> #warren {
+position:absolute;
+margin-top: -17px;
+margin-left: 3px;
+width: 32px;
+height: 194px;
+background-color: purple;
+			}
+			</style>
+		</ol>
+        <tr class='board-row' ng-repeat="row in fleetBoard.rows"> 
             <td ng-repeat='cell in row' class="board-cell board-cell_empty">
-              <div class="fleet-board-cell-content">&nbsp<span ng-if="cell.hit">Hit</span><span ng-if="cell.miss">Miss</span></div>
+              <div class="fleet-board-cell-content">&nbsp<span ng-if="cell.hit">Hit</span><span ng-if="cell.miss">Miss</span>
+              </div>
             </td>
         </tr>
     </table>
   </div>
+
+  <script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("Text", ev.target.id);
+}
+
+function drop(ev) {
+	
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("Text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
   	  
 
-			<div class="navbar-inner">
+
+
+
+</body>
+			<!-- <div class="navbar-inner">
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> 
+     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script> 
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script> 
+    
 			<script src="angular-dragdrop.min.js"></script>
     	<script src="ship.js"></script>
-    		<div class="ship" data-drag="true" jqyoui-draggable="{animate:true}"><p>LS</p></div>
-		    	<style>
+    			<style>
 		    		.ship {width: 35px; height: 35px; background-color: red;}
 		      	.ship-droppable { width: 60px; height: 40px; padding-left: 4px; }
 		      	.ship-draggable { width: 40px; }
 		    	</style>
+    
+    	<div class="ship" data-drag="true" jqyoui-draggable="{animate:true}"><p>LS</p></div>
+		    	
 				
         <div class="container form-inline" style="text-align: center;">
           <div class="ship ship-droppable" data-drag="true" data-drop="true">
@@ -63,7 +160,7 @@
         </div>
       </div>  
 
-
+</div> -->
 
 
 

@@ -57,7 +57,7 @@ body {
 	position: relative;
 }
 
-.board {
+#board {
 	display: inline-block;
 	padding-top: 20px;
 }

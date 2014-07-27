@@ -16,145 +16,74 @@
 </header>
 
 <section class="game">
-
   <div class='popup'>  
     <div id='alert' ng-show="notTurnAlert" class="ng-hide">Seriously, dude, wait your turn.</div>
     <div id='alert' ng-show='chooseAgain' class='ng-hide'>Cell already shot! Choose again.</div>
   </div>
-<container class="armada">
-	<h3> Armada</h3>
- <div class="boat" id="single" draggable="true" ondragstart="drag(event)">
-					 <style> #single {
 
-margin-top: -16px;
-margin-left: 3px;
-width: 72px;
-height: 32px;
-background-color: grey;
-position: relative;}
-					 </style>
-				</div>
-				<div class="boat" id="double" draggable="true" ondragstart="drag(event)">
-					<style> #double {
-					
-margin-top: -16px;
-margin-left: 3px;
-width: 73px;
-height: 32px;
-background-color: yellow;
-position: relative;
-					}
+  <container class="armada">
+    <div class="ship" id="corvette" draggable="true" ondragstart="drag(event)"></div>
+    <div class="ship" id="frigate" draggable="true" ondragstart="drag(event)"></div>
+    <div class="ship" id="destroyer" draggable="true" ondragstart="drag(event)"></div>     
+    <div class="ship" id="cruiser" draggable="true" ondragstart="drag(event)"></div>
+    <div class="ship" id="carrier" draggable="true" ondragstart="drag(event)"></div>
+  </container>
 
+  <section class='boards'>
+    <div class="board radar">
+      <table class="board-table">
+          <tr class='board-row' ng-repeat="row in radarBoard.rows">
+            <td ng-repeat='cell in row' class="board-cell board-cell_empty">
+              <div ng-click="check(cell)" class="board-cell-content">&nbsp
+                <span ng-if="cell.shot">Shot</span>
+                <span ng-if="cell.hit">Hit</span>
+                <span ng-if="cell.miss">Miss</span>
+              </div>
+            </td>
+          </tr>
+      </table>
 
-					</style>
-					</div>
-				<div class= "boat" id="tripleV" draggable="true" ondragstart="drag(event)">
-					<style> #tripleV {
+      <div class='msg'>
+        <form>
+          <input id="msg" ng-model="msg" type='text' placeholder="Fraternize with the enemy" size='53px'/>
+          <button ng-click="chatForm.sendChat(msg)">Send</button>
+        </form>
+      </div>  
+    </div>
 
-margin-top: -16px;
-margin-left: 3px;
-width: 113px;
-height: 32px;
-background-color: orange;
-position: relative;
-					}
-					</style>
-					</div>
-		<div class= "boat" id="tripleVI" draggable="true" ondragstart="drag(event)">
-					<style> #tripleVI {
+    <div class="board fleet" >
+      <table class="board-table" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <tr class='board-row' ng-repeat="row in fleetBoard.rows"> 
+              <td ng-repeat='cell in row' class="board-cell board-cell_empty">
+                <div class="fleet-board-cell-content">&nbsp
+                  <span ng-if="cell.hit">Hit</span>
+                  <span ng-if="cell.miss">Miss</span>
+                </div>
+              </td>
+          </tr>
+      </table>
 
-margin-top: -16px;
-margin-left: 3px;
-width: 113px;
-height: 32px;
-background-color: red;
-position: relative;
-					}
-					</style>
-					</div>					
-		<div class= "boat" id="stefan" draggable="true" ondragstart="drag(event)">
-				<style> #stefan {
-					
-					position:relative;
-					margin-top: -16px;
-					margin-left: 3px;
-					height: 32px;
-					width: 192px;
-					background-color: brown;
-				}
-
-				</style>
-				</div>
-		<div class="boat" id="warren" draggable="true" ondragstart="drag(event)">
-			<style> #warren {
-				
-position:relative;
-margin-top: -17px;
-margin-left: 3px;
-width: 194px;
-height: 32px;
-background-color: purple;
-			}
-			</style>
-		</div>
-
-
-
-</container>
-	<section class='boards'>
-
-	  <div class="board radar">
-	    <table class="board-table">
-	        <tr class='board-row' ng-repeat="row in radarBoard.rows">
-	            <td ng-repeat='cell in row' class="board-cell board-cell_empty">
-	              <div ng-click="check(cell)" class="board-cell-content">&nbsp<span ng-if="cell.shot">Shot</span><span ng-if="cell.hit">Hit</span><span ng-if="cell.miss">Miss</span></div>
-	            </td>
-	        </tr>
-	    </table>
-	    <div class='msg'>
-	      <form>
-	        <input id="msg" ng-model="msg" type='text' placeholder="Fraternize with the enemy" size='53px' />
-	        <button ng-click="chatForm.sendChat(msg)">Send</button>
-	      </form>
-	    </div>  
-	  </div>
-
-	  <div class="board fleet" >
-	    <table class="board-table" ondrop="drop(event)" ondragover="allowDrop(event)"  >
-	        <tr class='board-row' ng-repeat="row in fleetBoard.rows"> 
-	            <td ng-repeat='cell in row' class="board-cell board-cell_empty">
-	              <div class="fleet-board-cell-content">&nbsp<span ng-if="cell.hit">Hit</span><span ng-if="cell.miss">Miss</span>
-	              </div>
-	            </td>
-	        </tr>
-	    </table>
-	   <div class='chat'>
-		   <ul ng-repeat="msgChat in messages track by $index" on-finish-render >
-		     <li>{{ msgChat.username }}: {{ msgChat.content }}</li></br>
-		   </ul>
-		 </div> 
-	  </div>
-
-	 </section>
-
-
+      <div class='chat'>
+        <ul ng-repeat="msgChat in messages track by $index" on-finish-render >
+          <li>{{ msgChat.username }}: {{ msgChat.content }}</li></br>
+        </ul>
+      </div> 
+    </div>
+  </section>
 
   <script>
-function allowDrop(ev) {
-    ev.preventDefault();
-}
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
 
-function drag(ev) {
-    ev.dataTransfer.setData("Text", ev.target.id);
-}
+    function drag(ev) {
+      ev.dataTransfer.setData("Text", ev.target.id);
+    }
 
-function drop(ev) {
-	
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("Text");
-    ev.target.appendChild(document.getElementById(data));
-}
-	</script>
-
-  
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("Text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+  </script>
 </section> 

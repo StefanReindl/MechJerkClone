@@ -147,8 +147,37 @@ body {
 	margin-right: 0px;
 }
 
-.boat {
+.ship {
 	margin: 30px;
+  margin-top: -16px;
+  margin-left: 3px;
+  height: 32px;
+  position: relative;
+}
+
+#corvette {
+  width: 72px;
+  background-color: grey;
+}
+
+#frigate {
+  width: 112px;
+  background-color: orange;
+}
+
+#destroyer {
+  width: 152px;
+  background-color: blue;
+}
+
+#cruiser {
+  width: 192px;
+  background-color: brown;
+}
+
+#carrier {
+  width: 232px;
+  background-color: purple;
 }
 
 .msg form {
@@ -166,7 +195,6 @@ body {
   display: inline-block;
   border-radius: 5px;
 }
-
 
 .chat {
   color: white;

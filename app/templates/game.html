@@ -1,92 +1,81 @@
 
-<h4>Welcome, Admiral {{ user.username }}</h4>
-
-<div class="game">
-
-  <div class="status">
-    <div id='go' ng-show='turnAlert' class='ng-hide'>It's your turn!</div>
-    <div id='wait' ng-show='waitAlert' class='ng-hide'>Wait for incoming shot</div>
-    <div id='wait' ng-show='gameOver' class='ng-hide'>GAME OVER</div>
-  </div>  
-
-  <div class='popup'  
-    <div id='alert' ng-show="notTurnAlert" class="ng-hide">Seriously, dude, wait your turn.</div>
-  </div>
-
-  <div class="{{ board.length }}"></div>
-  <div class="board first">
-    <table class="board-table">
-        <tr class="board-row">
-        </tr>
-        <tr class='board-row' ng-repeat="row in radarBoard.rows">
-            <td ng-repeat='cell in row' class="board-cell board-cell_empty">
-              <div ng-click="check(cell)" class="board-cell-content">&nbsp<span ng-if="cell.shot">Shot</span><span ng-if="cell.hit">Hit</span><span ng-if="cell.miss">Miss</span></div>
-            </td>
-        </tr>
-    </table>
-  </div>
-
+<header class='header'>
+  <span class='logo'>
+    <h2>Mechanical Jerk</h2>
+  </span>
   
+  <span class="status">
+    <div id='green' ng-show='turnAlert' class='ng-hide'>It's your turn!</div>
+    <div id='red' ng-show='waitAlert' class='ng-hide'>Wait for incoming shot</div>
+    <div id='red' ng-show='gameOver' class='ng-hide'>GAME OVER</div>
+  </span>  
 
+  <span class='user'>
+    <h4>Welcome, Admiral {{ user.username }}</h4>
+  </span>
+</header>
 
+<section class="game">
 
-  <div id="board" ></div>
-  	
-    
-    <table class="board-table" ondrop="drop(event)" ondragover="allowDrop(event)"  >
-        <!-- <tr class="board-row">
-        </tr> -->
-        <body>
-
-		<ol>
-        <div class="boat" id="single" draggable="true" ondragstart="drag(event)">
+  <div class='popup'>  
+    <div id='alert' ng-show="notTurnAlert" class="ng-hide">Seriously, dude, wait your turn.</div>
+    <div id='alert' ng-show='chooseAgain' class='ng-hide'>Cell already shot! Choose again.</div>
+  </div>
+<container class="armada">
+	<h3> Armada</h3>
+ <div class="boat" id="single" draggable="true" ondragstart="drag(event)">
 					 <style> #single {
-float: left;
+
 margin-top: -16px;
 margin-left: 3px;
-width: 32px;
-height: 72px;
+width: 72px;
+height: 32px;
 background-color: grey;
-position: absolute;}
+position: relative;}
 					 </style>
-
+				</div>
 				<div class="boat" id="double" draggable="true" ondragstart="drag(event)">
 					<style> #double {
-						float: left;
-					margin-top: -16px;
+					
+margin-top: -16px;
 margin-left: 3px;
 width: 73px;
 height: 32px;
 background-color: yellow;
-position: absolute;
+position: relative;
 					}
 
 
 					</style>
+					</div>
 				<div class= "boat" id="tripleV" draggable="true" ondragstart="drag(event)">
 					<style> #tripleV {
-margin-top: -18px;
+
+margin-top: -16px;
 margin-left: 3px;
-width: 32px;
-height: 116px;
-background-color: red;
-position: absolute;
+width: 113px;
+height: 32px;
+background-color: orange;
+position: relative;
 					}
 					</style>
+					</div>
 		<div class= "boat" id="tripleVI" draggable="true" ondragstart="drag(event)">
 					<style> #tripleVI {
-						float: right;
-margin-top: -18px;
+
+margin-top: -16px;
 margin-left: 3px;
-width: 32px;
-height: 116px;
-background-color: orange;
-position: absolute;
+width: 113px;
+height: 32px;
+background-color: red;
+position: relative;
 					}
-					</style>					
+					</style>
+					</div>					
 		<div class= "boat" id="stefan" draggable="true" ondragstart="drag(event)">
 				<style> #stefan {
-					position:absolute;
+					
+					position:relative;
 					margin-top: -16px;
 					margin-left: 3px;
 					height: 32px;
@@ -95,25 +84,60 @@ position: absolute;
 				}
 
 				</style>
+				</div>
 		<div class="boat" id="warren" draggable="true" ondragstart="drag(event)">
 			<style> #warren {
-position:absolute;
+				
+position:relative;
 margin-top: -17px;
 margin-left: 3px;
-width: 32px;
-height: 194px;
+width: 194px;
+height: 32px;
 background-color: purple;
 			}
 			</style>
-		</ol>
-        <tr class='board-row' ng-repeat="row in fleetBoard.rows"> 
-            <td ng-repeat='cell in row' class="board-cell board-cell_empty">
-              <div class="fleet-board-cell-content">&nbsp<span ng-if="cell.hit">Hit</span><span ng-if="cell.miss">Miss</span>
-              </div>
-            </td>
-        </tr>
-    </table>
-  </div>
+		</div>
+
+
+
+</container>
+	<section class='boards'>
+
+	  <div class="board radar">
+	    <table class="board-table">
+	        <tr class='board-row' ng-repeat="row in radarBoard.rows">
+	            <td ng-repeat='cell in row' class="board-cell board-cell_empty">
+	              <div ng-click="check(cell)" class="board-cell-content">&nbsp<span ng-if="cell.shot">Shot</span><span ng-if="cell.hit">Hit</span><span ng-if="cell.miss">Miss</span></div>
+	            </td>
+	        </tr>
+	    </table>
+	    <div class='msg'>
+	      <form>
+	        <input id="msg" ng-model="msg" type='text' placeholder="Fraternize with the enemy" size='53px' />
+	        <button ng-click="chatForm.sendChat(msg)">Send</button>
+	      </form>
+	    </div>  
+	  </div>
+
+	  <div class="board fleet" >
+	    <table class="board-table" ondrop="drop(event)" ondragover="allowDrop(event)"  >
+	        <tr class='board-row' ng-repeat="row in fleetBoard.rows"> 
+	            <td ng-repeat='cell in row' class="board-cell board-cell_empty">
+	              <div class="fleet-board-cell-content">&nbsp<span ng-if="cell.hit">Hit</span><span ng-if="cell.miss">Miss</span>
+	              </div>
+	            </td>
+	        </tr>
+	    </table>
+	   <div class='chat'>
+		   <ul ng-repeat="msgChat in messages track by $index" on-finish-render >
+		     <li>{{ msgChat.username }}: {{ msgChat.content }}</li></br>
+		   </ul>
+		 </div> 
+	  </div>
+
+	 </section>
+
+
 
   <script>
 function allowDrop(ev) {
@@ -130,52 +154,7 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("Text");
     ev.target.appendChild(document.getElementById(data));
 }
-</script>
-  	  
-
-
-
-
-</body>
-			<!-- <div class="navbar-inner">
-			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> 
-     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script> 
-     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script> 
-    
-			<script src="angular-dragdrop.min.js"></script>
-    	<script src="ship.js"></script>
-    			<style>
-		    		.ship {width: 35px; height: 35px; background-color: red;}
-		      	.ship-droppable { width: 60px; height: 40px; padding-left: 4px; }
-		      	.ship-draggable { width: 40px; }
-		    	</style>
-    
-    	<div class="ship" data-drag="true" jqyoui-draggable="{animate:true}"><p>LS</p></div>
-		    	
-				
-        <div class="container form-inline" style="text-align: center;">
-          <div class="ship ship-droppable" data-drag="true" data-drop="true">
-            <div class="ship ship-info ship-draggable" data-drag="{{item.drag}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="list5" jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}" ng-hide="!item.title">{{item.title}}</div>
-          </div>
-        </div>
-      </div>  
-
-</div> -->
-
-
-
-
-  <div class='msg'>
-    <form>
-      <input id="msg" ng-model="msg" type='text' placeholder="Fraternize with the enemy" size='60' />
-      <button ng-click="chatForm.sendChat(msg)">Send</button>
-    </form>
-  </div> 
-  <div class='chat'>
-    <ul ng-repeat="msgChat in messages track by $index" on-finish-render >
-      <li>{{ msgChat.username }}: {{ msgChat.content }}</li></br>
-    </ul>
-  </div> 
+	</script>
 
   
 </section> 

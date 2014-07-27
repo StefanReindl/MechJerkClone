@@ -4,40 +4,24 @@
 ==================================================================*/
 /*global app*/
 
-
-
 app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 'Board', 'WarSocket', 'User', 'Game', 'Cell', function ($scope, $timeout, $cookieStore, $rootScope, Board, WarSocket, User, Game, Cell) {
   'use strict';
 
   var user = User.get();
   $scope.user = user;
-  var game = Game.get();
-  var active_user = false;
-  $scope.waitAlert = true;
-  $scope.gameOver = false;
-
   $scope.user = $cookieStore.get('username');
+  var active_user = false;
 
+  var game = Game.get();
   $scope.fleetBoard = Board.create();
   $scope.radarBoard = Board.create();
 
+  $scope.waitAlert = true;
+  $scope.chooseAgain = false;
+  $scope.gameOver = false;
 
-  // checks if click performed by active_user
-  $scope.check = function(cell){
-    console.log('checking if active_user');
-    console.log(cell);
-    if (active_user) {
-      $scope.clickedCell(cell);
-    } else {
-      $scope.notTurnAlert = true;
-      $timeout(function(){
-        console.log('timeout function hit')
-        $scope.notTurnAlert = false
-      }, 2000);
-    };
-  };
-
-  // active_user makes shot
+  
+  // active_user assigned
   WarSocket.on('Your turn', function(){
     active_user = true;
     $scope.turnAlert = true;
@@ -45,6 +29,35 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
     console.log('Your turn, ' + $scope.user.username);
   });
 
+  // checks if click performed by active_user & unclicked cell clicked
+  $scope.check = function(cell){
+    var my_cell = $scope.radarBoard.getCell(cell.row, cell.col);
+    if ($scope.chooseAgain === true){ // this bugfix could use work
+      console.log('motherclucker multiclick');
+      return;
+    };
+    if (active_user && my_cell.shot === false) {
+      console.log('checking if active_user & shot legal on cell: ' + my_cell)
+      $scope.clickedCell(cell);
+    } else if (active_user){
+      console.log('choose again');
+      $scope.chooseAgain = true;
+      $timeout(function(){
+        $scope.chooseAgain = false;
+      }, 1100);
+    } else {
+      if ($scope.notTurnAlert === true){ // this bugfix could use work
+        console.log('notTurnAlert multiclick')
+        return;
+      };
+      $scope.notTurnAlert = true;
+      $timeout(function(){
+        $scope.notTurnAlert = false;
+      }, 1100);
+    };
+  };
+
+  // active_user selects cell to shoot, cell sent to socket
   $scope.clickedCell = function(cell) {
     cell.shot = true;
     WarSocket.emit('shot', cell);
@@ -67,7 +80,7 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
     };
   });
 
-  // show hit on active_user's radarBoard
+  // show hit on active_user's radarBoard, switch active_user & turn alerts
   WarSocket.on('hit', function (cell){
     $scope.radarBoard.getCell(cell.row, cell.col).hit = true;
     WarSocket.emit('turn complete');
@@ -77,7 +90,7 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
     console.log('Ship hit at ' + cell.row + ', ' + cell.col);
   });
 
-  // show miss on active_user's radarBoard
+  // show miss on active_user's radarBoard, switch active_user & turn alerts
   WarSocket.on('miss', function (cell){
     $scope.radarBoard.getCell(cell.row, cell.col).miss = true;
     WarSocket.emit('turn complete');
@@ -87,11 +100,11 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
     console.log('Turkey giblets');
   });
 
+  // chat feature below
   $scope.chatForm = {}
   $scope.msg = ''
   $scope.messages = []
   
-
   $scope.chatForm.sendChat = function(msg){
     console.log('chat send button hit');
     console.log($scope.user + ' send message: ' + msg);

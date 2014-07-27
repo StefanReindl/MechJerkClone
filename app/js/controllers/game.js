@@ -100,6 +100,7 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
     console.log('Turkey giblets');
   });
 
+  // chat feature below
   $scope.chatForm = {}
   $scope.msg = ''
   $scope.messages = []

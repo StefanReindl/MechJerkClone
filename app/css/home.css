@@ -1,3 +1,39 @@
-.username form {
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  background-color: black;
+  padding: 10px;
+  display: inline-block;
+}
+
+.logo {
+  float: left;
+  width: auto;
+  display: inline-block;
+}
+
+.hero {
+	float: right;
+	margin-right: 20px;
+}
+
+.signin {
+	padding: 10px;
+	width: 400px;
+	margin: 0 auto;
+}
+
+form {
 	color: black;
+}
+
+.start {
+	background-color: green;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
 }

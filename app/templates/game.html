@@ -1,20 +1,29 @@
 
-<h4>Welcome, Admiral {{ user.username }}</h4>
 
-<section class="game">
-
-  <div class="status">
-    <div ng-show='turnAlert' class='ng-hide'>It's your turn!</div>
+<header class='header'>
+  <span class='logo'>
+    <h2>Mechanical Jerk</h2>
+  </span>
+  
+  <span class="status">
+    <div id='green' ng-show='turnAlert' class='ng-hide'>It's your turn!</div>
     <div id='red' ng-show='waitAlert' class='ng-hide'>Wait for incoming shot</div>
     <div id='red' ng-show='gameOver' class='ng-hide'>GAME OVER</div>
-  </div>  
+  </span>  
+
+  <span class='user'>
+    <h4>Welcome, Admiral {{ user.username }}</h4>
+  </span>
+</header>
+
+<section class="game">
 
   <div class='popup'>  
     <div id='alert' ng-show="notTurnAlert" class="ng-hide">Seriously, dude, wait your turn.</div>
     <div id='alert' ng-show='chooseAgain' class='ng-hide'>Cell already shot! Choose again.</div>
   </div>
 
-  <div class="board first">
+  <div class="board radar">
     <table class="board-table">
         <tr class='board-row' ng-repeat="row in radarBoard.rows">
             <td ng-repeat='cell in row' class="board-cell board-cell_empty">
@@ -22,9 +31,15 @@
             </td>
         </tr>
     </table>
+    <div class='msg'>
+      <form>
+        <input id="msg" ng-model="msg" type='text' placeholder="Fraternize with the enemy" size='53px' />
+        <button ng-click="chatForm.sendChat(msg)">Send</button>
+      </form>
+    </div>  
   </div>
 
-  <div class="board">
+  <div class="board fleet">
     <table class="board-table">
         <tr class='board-row' ng-repeat="row in fleetBoard.rows">
             <td ng-repeat='cell in row' class="board-cell board-cell_empty">
@@ -32,19 +47,11 @@
             </td>
         </tr>
     </table>
+    <div class='chat'>
+      <ul ng-repeat="msgChat in messages track by $index" on-finish-render >
+        <li>{{ msgChat.username }}: {{ msgChat.content }}</li></br>
+      </ul>
+    </div> 
   </div>  
-  
-  <div class='msg'>
-    <form>
-      <input id="msg" ng-model="msg" type='text' placeholder="Fraternize with the enemy" size='53px' />
-      <button ng-click="chatForm.sendChat(msg)">Send</button>
-    </form>
-  </div>  
-  <div class='chat'>
-    <ul ng-repeat="msgChat in messages track by $index" on-finish-render >
-      <li>{{ msgChat.username }}: {{ msgChat.content }}</li></br>
-    </ul>
-  </div> 
-
   
 </section> 

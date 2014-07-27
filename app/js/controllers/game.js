@@ -80,7 +80,7 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
     };
   });
 
-  // show hit on active_user's radarBoard
+  // show hit on active_user's radarBoard, switch active_user & turn alerts
   WarSocket.on('hit', function (cell){
     $scope.radarBoard.getCell(cell.row, cell.col).hit = true;
     WarSocket.emit('turn complete');
@@ -90,7 +90,7 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
     console.log('Ship hit at ' + cell.row + ', ' + cell.col);
   });
 
-  // show miss on active_user's radarBoard
+  // show miss on active_user's radarBoard, switch active_user & turn alerts
   WarSocket.on('miss', function (cell){
     $scope.radarBoard.getCell(cell.row, cell.col).miss = true;
     WarSocket.emit('turn complete');
@@ -100,6 +100,7 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
     console.log('Turkey giblets');
   });
 
+  // chat feature below
   $scope.chatForm = {}
   $scope.msg = ''
   $scope.messages = []

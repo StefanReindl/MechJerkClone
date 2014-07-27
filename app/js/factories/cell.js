@@ -6,24 +6,24 @@
 
 app.factory('Cell', function (){
 
-	'use strict';
-	console.log("calling Cell function")
+  'use strict';
+  console.log("calling Cell function")
  
-	return {
-		create: function(row, col) {
-			var cell = {
-			  col: col,
-			  row: row,
-			  shot: false, // cell was fired on
-			  ship: false, // cell has a ship on it
-			  hit: false, // ship occupying this cell has been hit
-			  miss: false // cell was shot but had no ship
-			}
-			console.log("cell returned!")
-			return cell;
-			
-		}
-	}
+  return {
+    create: function(row, col) {
+      var cell = {
+        col: col,
+        row: row,
+        shot: false, // cell was fired on
+        ship: false, // cell has a ship on it
+        hit: false, // ship occupying this cell has been hit
+        miss: false // cell was shot but had no ship
+      }
+      console.log("cell returned!")
+      return cell;
+      
+    }
+  }
 });
 
 

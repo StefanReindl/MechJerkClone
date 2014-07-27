@@ -7,25 +7,52 @@
   user-select: none;
 }
 
-body {
-  background-color: #303030;
-  color: white;
-  text-align: center;
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  background-color: black;
+  padding: 10px;
+  display: inline-block;
+}
+
+.logo {
+  float: left;
+  width: auto;
+  display: inline-block;
 }
 
 .status {
-  width: 200px;
+  width: auto;
   height: 25px;
   background-color: green;
   color: white;
-  font-size: 18px;
-  margin-left: auto;
-  margin-right: auto;
-  opacity: 0.8;
+  font-size: 20px;
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
 #red {
   background-color: red;
+}
+
+.user {
+  margin-right: 10px;
+  width: auto;
+  top: 15px;
+  right: 10px;
+  display: inline-block;
+  position: absolute;
+}
+
+body {
+  background-color: #303030;
+  color: white;
+  text-align: center;
+  margin-top: 80px;
 }
 
 #alert {
@@ -53,23 +80,19 @@ body {
     opacity: 0;
 }
 
-.game {
-  position: relative;
-}
-
 .board {
   display: inline-block;
+  position: relative;
+  vertical-align: top;
   padding-top: 20px;
 }
 
-.board.first {
-  padding-right: 80px;
+.board.radar {
+  padding-right: 40px;
 }
 
-.board-table {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 30px;
+.board.fleet {
+  padding-left: 40px;
 }
 
 .board-cell {
@@ -108,29 +131,10 @@ body {
   border-width: 2.5px;
 }
 
-.chat {
-  color: white;
-  margin: 5px;
-  height: 150px;
-  width: 600px;
-  opacity: 0.5;
-  overflow-y: hidden;
-  position: relative;
-  display: inline-block;
-  float: right;
-  padding-top: 10px;
-}
-
-.chat li {
-  list-style-type: none;
-  float: left;
-}
-
 .msg form {
   color: black;
   bottom: 0;
   float: left;
-  padding-left: 190px;
   padding-top: 10px;
   display: inline-block;
 } 
@@ -140,4 +144,22 @@ body {
   color: white;
   border: none;
   display: inline-block;
+  border-radius: 5px;
 }
+
+.chat {
+  color: white;
+  margin: 5px;
+  height: 150px;
+  width: 400px;
+  opacity: 0.5;
+  overflow-y: hidden;
+  display: inline-block;
+  padding-top: 10px;
+}
+
+.chat li {
+  list-style-type: none;
+  float: left;
+}
+

@@ -137,11 +137,6 @@ body {
   background-color: #33CCFF;
 }
 
-.fleet-board-cell-content:hover {
-  border-color: white;
-  border-width: 2.5px;
-}
-
 .armada {
 	position: relative;
 	display: inline-block;

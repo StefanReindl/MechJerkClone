@@ -4,7 +4,7 @@
 ==================================================================*/
 /*global app*/
 
-app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 'Board', 'WarSocket', 'User', 'Game', 'Cell', function ($scope, $timeout, $cookieStore, $rootScope, Board, WarSocket, User, Game, Cell) {
+app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 'Board', 'WarSocket', 'Ship', 'User', 'Game', 'Cell', function ($scope, $timeout, $cookieStore, $rootScope, Board, WarSocket, Ship, User, Game, Cell) {
   'use strict';
 
   var user = User.get();
@@ -15,6 +15,14 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   var game = Game.get();
   $scope.fleetBoard = Board.create();
   $scope.radarBoard = Board.create();
+
+  $scope.ships = {
+    frigate: Ship.create("frigate", 3),
+    corvette: Ship.create("corvette", 2),
+    destroyer: Ship.create("destroyer", 4),
+    cruiser: Ship.create("cruiser", 5),
+    carrier: Ship.create("carrier", 6)
+  };
 
   $scope.waitAlert = true;
   $scope.chooseAgain = false;

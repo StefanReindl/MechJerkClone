@@ -1,23 +1,19 @@
-// var App = angular.module('drag-and-drop', ['ngDragDrop']);
+app.factory('Ship', function () {
 
-// App.controller('shit', function($scope, $timeout) {
-//   $scope.board = [];
+  'use strict';
 
-  
-//   $scope.list5 = [
-//     { 'title': 'Item 1', 'drag': true },
-//     { 'title': 'Item 2', 'drag': true },
+  var ship;
 
-//   ];
-
-//   // Limit items to be dropped in list1
-//   $scope.optionsBoard = {
-//     accept: function(dragEl) {
-//       if ($scope.board.length >= 20) {
-//         return false;
-//       } else {
-//         return true;
-//       }
-//     }
-//   };
-// });
+  return{
+    create : function (name, length) {
+      ship = {
+        name: name,
+        length: length
+      }
+      return ship;
+    },
+    get: function(){
+      return ship;
+    }
+  };
+});

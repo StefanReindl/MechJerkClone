@@ -45,7 +45,7 @@
           </tr>
       </table>
 
-      <div class='msg'>
+    <div class='msg'>
         <form>
           <input id="msg" ng-model="msg" type='text' placeholder="Fraternize with the enemy" size='53px'/>
           <button ng-click="chatForm.sendChat(msg)">Send</button>
@@ -72,20 +72,4 @@
       </div> 
     </div>
   </section>
-
-  <script>
-    function allowDrop(ev) {
-      ev.preventDefault();
-    }
-
-    function drag(ev) {
-      ev.dataTransfer.setData("Text", ev.target.id);
-    }
-
-    function drop(ev) {
-      ev.preventDefault();
-      var data = ev.dataTransfer.getData("Text");
-      ev.target.appendChild(document.getElementById(data));
-    }
-  </script>
 </section> 

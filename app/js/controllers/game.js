@@ -16,7 +16,8 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   $scope.fleetBoard = Board.create();
   $scope.radarBoard = Board.create();
 
-  $scope.ships = {
+  var ship = Ship.get();
+    $scope.ships = {
     frigate: Ship.create("frigate", 3),
     corvette: Ship.create("corvette", 2),
     destroyer: Ship.create("destroyer", 4),

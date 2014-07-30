@@ -9,8 +9,11 @@
     function drop(ev) {
       ev.preventDefault();
       var data = ev.dataTransfer.getData("Text");
-     
-      console.log(data)
+      var scope = angular.element($("#"+data)).scope();
 
+      console.log(scope)
+      
+      var ship = scope.ships[data];
+      console.log(ship)
       ev.target.appendChild(document.getElementById(data));
     }

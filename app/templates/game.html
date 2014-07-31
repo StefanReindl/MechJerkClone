@@ -36,9 +36,12 @@
           <tr class='board-row' ng-repeat="row in radarBoard.rows">
             <td ng-repeat='cell in row' class="board-cell board-cell_empty">
               <div ng-click="check(cell)" class="board-cell-content">&nbsp
-                <span ng-if="cell.shot">Shot</span>
-                <span ng-if="cell.hit">Hit</span>
-                <span ng-if="cell.miss">Miss</span>
+                <div ng-if="cell.hit">
+                  <div class='result' id='hit'></div>
+                </div>
+                <div ng-if="cell.miss">
+                  <div class='result' id='miss'></div>
+                </div>
               </div>
             </td>
           </tr>

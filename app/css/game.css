@@ -124,8 +124,23 @@ body {
 
 .board-cell-content:hover {
   border-color: white;
-  border-width: 2.5px;
   background-color: #00CC00;
+}
+
+.result {
+  margin-left: 4.5px;
+  margin-top: -15.5px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.result#hit {
+  background-color: red;
+}
+
+.result#miss {
+  background-color: white;
 }
 
 .fleet-board-cell-content {

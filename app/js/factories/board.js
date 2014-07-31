@@ -9,6 +9,18 @@ app.factory('Board', ['Cell', function (Cell){
         rows: [],
         getCell: function(row, col) {
           return this.rows[row][col];
+        },
+        shipDrop: function(ship, cell){
+          var col = cell.col;
+          var row = cell.row;
+          for (var i = col; i < col + ship.length; i++){
+            var cell = this.getCell(row, i);
+            console.log(cell);
+            cell.ship = true
+          };
+          
+          console.log(cell)
+          console.log("booyah! row:" + row + ", col: " + col);
         }
       }
       // create a table of 100 cells

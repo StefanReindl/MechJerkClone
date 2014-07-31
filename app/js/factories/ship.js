@@ -8,7 +8,8 @@ app.factory('Ship', function () {
     create : function (name, length) {
       ship = {
         name: name,
-        length: length
+        length: length,
+        cells: []
       }
       return ship;
     },

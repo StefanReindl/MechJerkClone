@@ -19,6 +19,7 @@ app.factory('Cell', function (){
         hit: false, // ship occupying this cell has been hit
         miss: false, // cell was shot but had no ship
         onDrop: function(){
+          
           console.log("booyah! row:" + row + ", col: " + col);
         }
       }

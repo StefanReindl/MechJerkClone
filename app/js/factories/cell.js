@@ -17,7 +17,11 @@ app.factory('Cell', function (){
         shot: false, // cell was fired on
         ship: false, // cell has a ship on it
         hit: false, // ship occupying this cell has been hit
-        miss: false // cell was shot but had no ship
+        miss: false, // cell was shot but had no ship
+        onDrop: function(){
+          
+          console.log("booyah! row:" + row + ", col: " + col);
+        }
       }
       console.log("cell returned!")
       return cell;

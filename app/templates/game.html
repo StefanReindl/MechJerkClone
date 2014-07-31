@@ -24,11 +24,10 @@
   <container class="armada">
   	<h3> Armada </h3>
   	<br>
-    <div class="ship" id="corvette" draggable="true" ondragstart="drag(event)"></div>
-    <div class="ship" id="frigate" draggable="true" ondragstart="drag(event)"></div>
-    <div class="ship" id="destroyer" draggable="true" ondragstart="drag(event)"></div>     
-    <div class="ship" id="cruiser" draggable="true" ondragstart="drag(event)"></div>
-    <div class="ship" id="carrier" draggable="true" ondragstart="drag(event)"></div>
+    <div id='dock' ng-repeat="ship in ships">
+      <div class='ship' id="{{ship.name}}" draggable="true" ondragstart="drag(event)">
+      </div>
+    </div>
   </container>
 
   <section class='boards'>
@@ -57,7 +56,7 @@
       <table class="board-table" ondrop="drop(event)" ondragover="allowDrop(event)">
           <tr class='board-row' ng-repeat="row in fleetBoard.rows"> 
               <td ng-repeat='cell in row' class="board-cell board-cell_empty">
-                <div class="fleet-board-cell-content">&nbsp
+                <div class="fleet-board-cell-content" id="{{cell.col}},{{cell.row}}" ship-drop='cell.onDrop()'>&nbsp
                   <span ng-if="cell.hit">Hit</span>
                   <span ng-if="cell.miss">Miss</span>
                 </div>

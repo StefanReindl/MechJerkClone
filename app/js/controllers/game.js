@@ -26,7 +26,7 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
       destroyer: Ship.create("destroyer", 4),
       cruiser: Ship.create("cruiser", 5),
       carrier: Ship.create("carrier", 6)
-    };
+  };
   
   // active_user assigned
   WarSocket.on('Your turn', function(){

@@ -57,7 +57,7 @@
       <table class="board-table" ondrop="drop(event)" ondragover="allowDrop(event)">
           <tr class='board-row' ng-repeat="row in fleetBoard.rows"> 
               <td ng-repeat='cell in row' class="board-cell board-cell_empty">
-                <div class="fleet-board-cell-content">&nbsp
+                <div class="fleet-board-cell-content" ship-drop='cell.onDrop()'>&nbsp
                   <span ng-if="cell.hit">Hit</span>
                   <span ng-if="cell.miss">Miss</span>
                 </div>

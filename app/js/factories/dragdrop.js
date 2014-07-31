@@ -12,5 +12,6 @@
       var scope = angular.element($("#"+data)).scope();
       var ship = scope.ships[data];
       console.log(ship)
+
       ev.target.appendChild(document.getElementById(data));
     }

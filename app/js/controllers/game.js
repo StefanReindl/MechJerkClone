@@ -39,6 +39,7 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
     console.log('ready button hit');
     $scope.selfSetup = false;
     $scope.waitEnemySetup = true;
+    WarSocket.emit('opponent ready');
   };
   
   // active_user assigned
@@ -52,6 +53,9 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   // checks if click performed by active_user & unclicked cell clicked
   $scope.check = function(cell){
     var my_cell = $scope.radarBoard.getCell(cell.row, cell.col);
+    if ($scope.selfSetup || $scope.waitEnemySetup){
+      return;
+    };
     if ($scope.chooseAgain === true){ // this bugfix could use work
       console.log('motherclucker multiclick');
       return;

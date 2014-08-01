@@ -11,6 +11,7 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   $scope.user = user;
   $scope.user = $cookieStore.get('username');
   var active_user = false;
+  var hp = 21;
 
   var game = Game.get();
   $scope.fleetBoard = Board.create();
@@ -78,7 +79,12 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
     console.log(my_cell);
     if (my_cell.ship === true){
       my_cell.hit = true;
+      hp -= 1;
+      if (hp === 0){
+        gameOver = true;
+      }
       console.log('Hit!');
+      console.log('You now have ' + hp + 'HP left!');
       WarSocket.emit('hit', cell);
     } else {
       my_cell.miss = true;

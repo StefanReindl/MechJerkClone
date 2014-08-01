@@ -5,7 +5,7 @@
 /*global angular*/
 
 
-var app = angular.module('battleship', ['ngCookies', 'ngSanitize', 'ngAnimate', 'ui.router', 'btford.socket-io', 'ngDragDrop']);
+var app = angular.module('battleship', ['ngCookies', 'ngSanitize', 'ngAnimate', 'ui.router', 'btford.socket-io']);
 
 
 app.config(['$httpProvider', function ($httpProvider) {

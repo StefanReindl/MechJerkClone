@@ -64,7 +64,7 @@ angular.module('battleship')
       }
     }
 
-    setInterval(draw, 33);
+    setInterval(draw, 0.5);
 
 
   };

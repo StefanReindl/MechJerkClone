@@ -7,6 +7,13 @@
   user-select: none;
 }
 
+body {
+  background-color: #303030;
+  color: white;
+  text-align: center;
+  margin-top: 80px;
+}
+
 canvas {
  width: 39px;
  height: 39px;
@@ -53,13 +60,6 @@ header {
   right: 10px;
   display: inline-block;
   position: absolute;
-}
-
-body {
-  background-color: #303030;
-  color: white;
-  text-align: center;
-  margin-top: 80px;
 }
 
 #alert {
@@ -203,6 +203,21 @@ body {
   background-color: purple;
 }
 
+button {  
+  background: green; 
+  color: white;
+  border: none;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.ready-button {
+  position: relative;
+  float: left;
+  margin-top: 60px;
+  margin-left: 10%;
+}
+
 .msg form {
   color: black;
   bottom: 0;
@@ -210,14 +225,6 @@ body {
   padding-top: 10px;
   display: inline-block;
 } 
-            
-.msg button {  
-  background: green; 
-  color: white;
-  border: none;
-  display: inline-block;
-  border-radius: 5px;
-}
 
 .chat {
   color: white;

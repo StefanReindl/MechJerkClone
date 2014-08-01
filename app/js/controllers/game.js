@@ -17,16 +17,28 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   $scope.fleetBoard = Board.create();
   $scope.radarBoard = Board.create();
 
-  $scope.waitAlert = true;
+  $scope.selfSetup = true;
+  $scope.waitEnemySetup = false;
+  $scope.waitAlert = false;
   $scope.chooseAgain = false;
   $scope.gameOver = false;
+  $scope.youLose = false;
+  $scope.youWin = false;
 
   $scope.ships = {
-      frigate: Ship.create("frigate", 3),
-      corvette: Ship.create("corvette", 2),
-      destroyer: Ship.create("destroyer", 4),
-      cruiser: Ship.create("cruiser", 5),
-      carrier: Ship.create("carrier", 6)
+    frigate: Ship.create("frigate", 3),
+    corvette: Ship.create("corvette", 2),
+    destroyer: Ship.create("destroyer", 4),
+    cruiser: Ship.create("cruiser", 5),
+    carrier: Ship.create("carrier", 6)
+  };
+
+  // disable draggable on Ready, notify opponent
+  $scope.setup = {}
+  $scope.setup.ready = function(){
+    console.log('ready button hit');
+    $scope.selfSetup = false;
+    $scope.waitEnemySetup = true;
   };
   
   // active_user assigned

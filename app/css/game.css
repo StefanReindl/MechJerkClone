@@ -7,6 +7,13 @@
   user-select: none;
 }
 
+canvas {
+ width: 40px;
+ height: 40px;
+ position: absolute;
+ margin-left: -21px;
+}
+
 header {
   position: absolute;
   top: 0;

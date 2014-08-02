@@ -15,10 +15,11 @@ body {
 }
 
 canvas {
- width: 36px;
- height: 36px;
- position: absolute;
- margin-left: -31.5px;
+width: 36px;
+height: 38px;
+position: absolute;
+margin-left: -19.5px;
+
 }
 
 header {
@@ -148,6 +149,12 @@ header {
 
 .result#miss {
   background-color: white;
+}
+
+img {
+  margin-top: -22px;
+  position: relative;
+  z-index: 1;
 }
 
 .fleet-board-cell-content {

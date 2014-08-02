@@ -8,8 +8,8 @@
 }
 
 canvas {
- width: 39px;
- height: 39px;
+ width: 36px;
+ height: 36px;
  position: absolute;
  margin-left: -31.5px;
 }
@@ -170,37 +170,33 @@ body {
 }
 
 .ship {
-  opacity: 0.5;
+  opacity: 0.9;
 	margin: 30px;
   margin-top: -16px;
   margin-left: 3px;
   height: 32px;
   position: relative;
+  background-color: #5E5E5E;
 }
 
 #corvette {
   width: 72px;
-  background-color: grey;
 }
 
 #frigate {
   width: 112px;
-  background-color: orange;
 }
 
 #destroyer {
   width: 152px;
-  background-color: blue;
 }
 
 #cruiser {
   width: 192px;
-  background-color: brown;
 }
 
 #carrier {
   width: 232px;
-  background-color: purple;
 }
 
 .msg form {

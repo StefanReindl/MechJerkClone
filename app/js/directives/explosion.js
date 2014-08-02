@@ -74,6 +74,7 @@ angular.module('battleship')
     link: link,
     scope: {
 
-    }
+    },
+  
   };
 })

@@ -7,6 +7,8 @@
   <span class="status">
     <div id='green' ng-show='turnAlert' class='ng-hide'>It's your turn!</div>
     <div id='red' ng-show='waitAlert' class='ng-hide'>Wait for incoming shot</div>
+    <div id='green' ng-show='selfSetup' class='ng-hide'>Click 'Ready' when ships deployed</div>
+    <div id='red' ng-show='waitEnemySetup' class='ng-hide'>Waiting for opponent to deploy</div>
     <div id='red' ng-show='gameOver' class='ng-hide'>GAME OVER</div>
   </span>  
 
@@ -21,12 +23,15 @@
     <div id='alert' ng-show='chooseAgain' class='ng-hide'>Cell already shot! Choose again.</div>
   </div>
 
+  <form class='ready-button'>
+    <button ng-click="setup.ready()" ng-show='selfSetup' class='ng-hide'>Ready!</button>
+  </form>
+
   <container class="armada">
-  	<h3> Armada </h3>
+  	<h3 ng-show='selfSetup' class='ng-hide'> Armada </h3>
   	<br>
     <div id='dock' ng-repeat="ship in ships">
-      <div class='ship' id="{{ship.name}}" draggable="true" ondragstart="drag(event)">
-      </div>
+      <div class='ship' id="{{ship.name}}" ondragstart="drag(event)" draggable='{{selfSetup}}' ></div>
     </div>
   </container>
 

@@ -116,7 +116,7 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
       hp -= 1;
       if (hp === 0){
         gameOver = true;
-      }
+      };
       console.log('Hit!');
       console.log('You now have ' + hp + 'HP left!');
       WarSocket.emit('hit', cell);

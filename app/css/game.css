@@ -39,14 +39,16 @@ header {
 }
 
 .status {
-  width: auto;
-  height: 25px;
+  position: relative;
+  width: 360px;
+  height: 28px;
   background-color: green;
   color: white;
   font-size: 20px;
-  display: inline-block;
-  margin: 0 auto;
+  display: block;
   margin-top: 20px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 #red {

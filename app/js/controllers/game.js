@@ -56,14 +56,18 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
 
   // if active_user assigned to opponent, show waitAlert
   WarSocket.on('Wait', function(){
-    $scope.waitAlert = true;
+    if (!$scope.gameOver){
+      $scope.waitAlert = true;
+    };
   });
   
   // active_user assigned
   WarSocket.on('Your turn', function(){
-    active_user = true;
-    $scope.turnAlert = true;
-    $scope.waitAlert = false;
+    if (!$scope.gameOver){
+      active_user = true;
+      $scope.turnAlert = true;
+      $scope.waitAlert = false;
+    };
     console.log('Your turn, ' + $scope.user.username);
   });
 
@@ -87,7 +91,7 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
       $timeout(function(){
         $scope.chooseAgain = false;
       }, 1100);
-    } else {
+    } else if (!$scope.gameOver){
       if ($scope.notTurnAlert === true){ // this bugfix could use work
         console.log('notTurnAlert multiclick')
         return;
@@ -107,6 +111,7 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   };
 
   // check if shot from active_user is hit/miss, show on fleetBoard
+  // if gameOver, notify winner
   WarSocket.on('shot', function (cell){
     console.log('Incoming shot!!!')
     var my_cell = $scope.fleetBoard.getCell(cell.row, cell.col);
@@ -115,7 +120,11 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
       my_cell.hit = true;
       hp -= 1;
       if (hp === 0){
-        gameOver = true;
+        $scope.gameOver = true;
+        $scope.waitAlert = false;
+        $scope.turnAlert = false;
+        $scope.loser = true;
+        WarSocket.emit('game over');
       };
       console.log('Hit!');
       console.log('You now have ' + hp + 'HP left!');
@@ -133,7 +142,9 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
     WarSocket.emit('turn complete');
     active_user = false;
     $scope.turnAlert = false;
-    $scope.waitAlert = true;
+    if (!$scope.gameOver){
+      $scope.waitAlert = true;
+    };
     console.log('Ship hit at ' + cell.row + ', ' + cell.col);
   });
 
@@ -147,7 +158,14 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
     console.log('Turkey giblets');
   });
 
-  // chat feature below
+  WarSocket.on('winner', function(){
+    $scope.gameOver = true;
+    $scope.turnAlert = false;
+    $scope.waitAlert = false;
+    $scope.winner = true;
+  });
+
+  // chat feature 
   $scope.chatForm = {}
   $scope.msg = ''
   $scope.messages = []

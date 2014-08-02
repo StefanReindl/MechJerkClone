@@ -10,6 +10,8 @@
     <div id='green' ng-show='selfSetup' class='ng-hide'>Click 'Ready' when ships deployed</div>
     <div id='red' ng-show='waitEnemySetup' class='ng-hide'>Waiting for opponent to deploy</div>
     <div id='red' ng-show='gameOver' class='ng-hide'>GAME OVER</div>
+    <div id='red' ng-show='loser' class='ng-hide'>You lose!</div>
+    <div id='red' ng-show='winner' class='ng-hide'>You win!</div>
   </span>  
 
   <span class='user'>
@@ -65,6 +67,7 @@
           <tr class='board-row' ng-repeat="row in fleetBoard.rows"> 
               <td ng-repeat='cell in row' class="board-cell board-cell_empty">
                 <div class="fleet-board-cell-content" id="{{cell.col}},{{cell.row}}">&nbsp
+
                   <span ng-if="cell.hit">
                       <!-- <img border="0" src="data:image/jpeg;base64,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" width="40px" height="40px">
                   -->

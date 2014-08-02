@@ -11,7 +11,7 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   $scope.user = user;
   $scope.user = $cookieStore.get('username');
   var active_user = false;
-  var hp = 21;
+  var hp = 20;
 
   var game = Game.get();
   $scope.fleetBoard = Board.create();

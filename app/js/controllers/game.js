@@ -18,7 +18,6 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   $scope.radarBoard = Board.create();
 
   $scope.selfSetup = true;
-  $scope.waitEnemySetup = false;
   $scope.waitAlert = false;
   $scope.chooseAgain = false;
   $scope.gameOver = false;
@@ -38,9 +37,27 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   $scope.setup.ready = function(){
     console.log('ready button hit');
     $scope.selfSetup = false;
-    $scope.waitEnemySetup = true;
-    WarSocket.emit('opponent ready');
+    if ($scope.waitEnemySetup !== false){
+      $scope.waitEnemySetup = true;
+    };
+    WarSocket.emit('player ready');
   };
+
+  // notify player when opponent is ready
+  WarSocket.on('opponent ready', function(){
+    $scope.waitEnemySetup = false;
+    if ($scope.selfSetup === false){
+      active_user = true;
+      $scope.turnAlert = true;
+      WarSocket.emit('active_user set');
+      console.log('Your turn, ' + $scope.user.username);
+    };
+  });
+
+  // if active_user assigned to opponent, show waitAlert
+  WarSocket.on('Wait', function(){
+    $scope.waitAlert = true;
+  });
   
   // active_user assigned
   WarSocket.on('Your turn', function(){
@@ -54,6 +71,7 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   $scope.check = function(cell){
     var my_cell = $scope.radarBoard.getCell(cell.row, cell.col);
     if ($scope.selfSetup || $scope.waitEnemySetup){
+      console.log('shot aborted - setup in progress')
       return;
     };
     if ($scope.chooseAgain === true){ // this bugfix could use work

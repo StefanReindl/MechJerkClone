@@ -21,8 +21,6 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   $scope.waitAlert = false;
   $scope.chooseAgain = false;
   $scope.gameOver = false;
-  $scope.youLose = false;
-  $scope.youWin = false;
 
   $scope.ships = {
     frigate: Ship.create("frigate", 3),

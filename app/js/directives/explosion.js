@@ -11,11 +11,10 @@ angular.module('battleship')
 
     canvas.width = W;
     canvas.height = H;
-
     var particles = [];
 
     //Lets create some particles now
-    var particleCount = 400;
+    var particleCount = 20;
     for(var i = 0; i < particleCount; i++) {
       particles.push(new particle());
     }
@@ -64,16 +63,25 @@ angular.module('battleship')
       }
     }
 
-    setInterval(draw, 0.5);
-
+    var w = setInterval(draw, 3);
+    setTimeout(function( ) { 
+      clearInterval( w );  
+      clearExplosion();
+    }, 1);
 
   };
+
+  function clearExplosion() {
+    
+  }
 
   return{
     restrict: 'A',
     link: link,
     scope: {
-
-    }
+      isActive: '='
+    },
+  
   };
+
 })

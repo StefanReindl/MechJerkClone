@@ -7,9 +7,13 @@
 app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 'Board', 'WarSocket', 'User', 'Ship', 'Game', 'Cell', function ($scope, $timeout, $cookieStore, $rootScope, Board, WarSocket, User, Ship, Game, Cell) {
   'use strict';
 
+
+  $scope.explosionActive = []
+
   var user = User.get();
   $scope.user = user;
   $scope.user = $cookieStore.get('username');
+
   var active_user = false;
   var hp = 20;
 
@@ -30,6 +34,11 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   // disable draggable on Ready, notify opponent
   $scope.setup = {}
   $scope.setup.ready = function(){
+
+        for(var i = 0; i < 100; i++) {
+          $scope.explosionActive[i] = true
+        }
+     
     console.log('ready button hit');
     $scope.selfSetup = false;
     if ($scope.waitEnemySetup !== false){

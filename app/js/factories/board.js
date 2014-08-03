@@ -19,8 +19,8 @@ app.factory('Board', ['Cell', function (Cell){
             cell.ship = true
           };
           
-          console.log(cell)
-          console.log("booyah! row:" + row + ", col: " + col);
+          console.log(cell + "full-house")
+          console.log("Warren ! row:" + row + ", col: " + col);
         }
       }
       // create a table of 100 cells

@@ -16,10 +16,11 @@ body {
 }
 
 canvas {
- width: 39px;
- height: 39px;
- position: absolute;
- margin-left: -31.5px;
+width: 36px;
+height: 38px;
+position: absolute;
+margin-left: -19.5px;
+
 }
 
 header {
@@ -168,6 +169,13 @@ header {
   background-color: white;
 }
 
+img {
+  margin-left: -19.5px;
+  position: absolute;
+
+  
+}
+
 .fleet-board-cell-content {
   height: 40px;
   width: 40px;
@@ -188,37 +196,43 @@ header {
 }
 
 .ship {
-  opacity: 0.5;
+  opacity: 0.9;
 	margin: 30px;
   margin-top: -16px;
   margin-left: 3px;
   height: 32px;
   position: relative;
+  background-color: #5E5E5E;
+  -moz-border-radius: 150px / 0px;
+  -webkit-border-radius: 20px / 20px;
+  border-radius: 90px / 30px;
 }
 
 #corvette {
   width: 72px;
-  background-color: grey;
+  border-radius: 99% / 90%;
 }
 
 #frigate {
   width: 112px;
-  background-color: orange;
+  border-radius: 90% / 60%;
 }
 
 #destroyer {
   width: 152px;
-  background-color: blue;
+  border-radius: 60% / 90%;
 }
 
 #cruiser {
   width: 192px;
-  background-color: brown;
+  border-radius: 60% / 90%;
 }
 
 #carrier {
   width: 232px;
-  background-color: purple;
+  -moz-border-radius: 150px / 0px;
+  -webkit-border-radius: 20px / 20px;
+  border-radius: 900px / 50px;
 }
 
 button {  

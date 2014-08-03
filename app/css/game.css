@@ -16,11 +16,12 @@ body {
 }
 
 canvas {
-width: 38px;
-height: 38px;
+width: 36px;
+height: 36px;
 border-radius: 50%;
 position: absolute;
 margin-left: -19.5px;
+margin-top: 1px;
 z-index: 50;
 
 }

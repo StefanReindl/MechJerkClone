@@ -20,21 +20,22 @@
 </header>
 
 <section class="game">
+
   <div class='popup'>  
     <div id='alert' ng-show="notTurnAlert" class="ng-hide">Seriously, dude, wait your turn.</div>
     <div id='alert' ng-show='chooseAgain' class='ng-hide'>Cell already shot! Choose again.</div>
   </div>
 
-  <form class='ready-button'>
-    <button ng-click="setup.ready()" ng-show='selfSetup' class='ng-hide'>Ready!</button>
-  </form>
-
   <container class="armada">
-  	<h3 ng-show='selfSetup' class='ng-hide'> Armada </h3>
+  	<h4 ng-show='selfSetup' class='ng-hide'> Armada </h4>
+    <form class='ready-button'>
+      <button ng-click="setup.ready()" ng-show='selfSetup' class='ng-hide'>Ready!</button>
+    </form><br>
   	<br>
     <div id='dock' ng-repeat="ship in ships">
       <div class='ship' id="{{ship.name}}" ondragstart="drag(event)" draggable='{{selfSetup}}' ></div>
     </div>
+    
   </container>
 
   <section class='boards'>

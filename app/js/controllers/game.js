@@ -18,9 +18,6 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   $scope.radarBoard = Board.create();
 
   $scope.selfSetup = true;
-  // $scope.waitAlert = false;
-  // $scope.chooseAgain = false;
-  // $scope.gameOver = false;
 
   $scope.ships = {
     frigate: Ship.create("frigate", 3),

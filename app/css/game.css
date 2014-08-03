@@ -206,6 +206,9 @@ img {
   height: 32px;
   position: relative;
   background-color: #5E5E5E;
+-webkit-box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.75);
+box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.75);
 }
 
 #minesweeper {
@@ -238,6 +241,7 @@ button {
   color: white;
   border: none;
   display: inline-block;
+  padding: 5px;
   border-radius: 5px;
 }
 
@@ -254,6 +258,13 @@ button {
   float: left;
   padding-top: 10px;
   display: inline-block;
+}
+
+input[type="text"], textarea {
+  background-color : black;
+  color: white;
+  border-style: none;
+  padding: 5px; 
 } 
 
 .chat {

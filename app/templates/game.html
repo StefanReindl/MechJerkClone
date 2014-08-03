@@ -45,10 +45,10 @@
             <td ng-repeat='cell in row' class="board-cell board-cell_empty">
               <div ng-click="check(cell)" class="board-cell-content">&nbsp
                 <div ng-if="cell.hit">
-                  <div class='result' id='hit'></div>
+                  <div class='result animated bounceIn' id='hit'></div>
                 </div>
                 <div ng-if="cell.miss">
-                  <div class='result' id='miss'></div>
+                  <div class='result animated bounceIn' id='miss'></div>
                 </div>
               </div>
             </td>

@@ -153,9 +153,10 @@ header {
 }
 
 img {
-  margin-top: -22px;
-  position: relative;
-  z-index: 1;
+  margin-left: -19.5px;
+  position: absolute;
+
+  
 }
 
 .fleet-board-cell-content {
@@ -185,26 +186,36 @@ img {
   height: 32px;
   position: relative;
   background-color: #5E5E5E;
+  -moz-border-radius: 150px / 0px;
+  -webkit-border-radius: 20px / 20px;
+  border-radius: 90px / 30px;
 }
 
 #corvette {
   width: 72px;
+  border-radius: 99% / 90%;
 }
 
 #frigate {
   width: 112px;
+  border-radius: 90% / 60%;
 }
 
 #destroyer {
   width: 152px;
+  border-radius: 60% / 90%;
 }
 
 #cruiser {
   width: 192px;
+  border-radius: 60% / 90%;
 }
 
 #carrier {
   width: 232px;
+  -moz-border-radius: 150px / 0px;
+  -webkit-border-radius: 20px / 20px;
+  border-radius: 900px / 50px;
 }
 
 button {  

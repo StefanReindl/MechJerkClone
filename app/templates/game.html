@@ -71,12 +71,15 @@
                 <div class="fleet-board-cell-content" id="{{cell.col}},{{cell.row}}">&nbsp
 
                   <span ng-if="cell.hit">
-                      <img border="0" src="http://www.playcrossbones.com/attachments/Image/pirate_skull_and_crossbones.gif" width="36px" height="38px">
-                
-                    <canvas ng-show='explosionActive[{{$index}}]' explosion>
-                    </canvas>
+                      <!-- <img border="0" src="http://www.playcrossbones.com/attachments/Image/pirate_skull_and_crossbones.gif" width="36px" height="38px"> -->
+                    <audio controls autoplay>
+                      <source src="http://www.eborg2.com/Sounds/Sounds-Explosions/Blast6.wav" type="audio/ogg">
+                    </audio>
+
+                    <canvas explosion ></canvas>
                   </span>
                   <div ng-if="cell.miss">
+                    
                     <div class='result' id='miss'></div>
                   </div>
                 </div>

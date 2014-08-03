@@ -10,6 +10,9 @@ header {
   font-family: 'Play', sans-serif;
 }
 
+audio {
+  display:none;
+}
 .logo {
   float: left;
   width: auto;
@@ -41,7 +44,11 @@ form {
 	border-radius: 5px;
 	padding: 5px;
 }
-
+#movie {
+  position:absolute;
+  height: auto;
+  width: auto;
+}
 #ocean{
   position:absolute;
   width:100%;

@@ -38,7 +38,12 @@ form {
 }
 
 .treasure {
-  
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 20;
+  margin-top: 1000px;
 }
 
 .aloha{
@@ -49,7 +54,7 @@ form {
   z-index: 20;
   margin-left: 800px;
 position: absolute;
-margin-top: 281px;
+margin-top: 331px;
  -webkit-animation: mymove 1.6s alternate infinite; 
     animation: mymove 1.5s alternate infinite;
 }

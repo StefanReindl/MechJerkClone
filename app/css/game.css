@@ -23,7 +23,6 @@ position: absolute;
 margin-left: -19.5px;
 margin-top: 1px;
 z-index: 50;
-
 }
 
 header {
@@ -145,7 +144,7 @@ header {
   height: 40px;
   width: 40px;
   border-style: solid;
-  border-color: #339933;
+  border-color: #33FF33;
   border-width: 1px;
   background-color: #003300;
   transition: background-color 1s ease;
@@ -153,11 +152,11 @@ header {
 
 .board-cell-content:hover {
   border-color: white;
-  background-color: #00CC00;
+  background-color: #33FF33;
 }
 
 .result {
-  margin-left: 4.5px;
+  margin-left: 4px;
   margin-top: -15.5px;
   height: 30px;
   width: 30px;
@@ -165,25 +164,23 @@ header {
 }
 
 .result#hit {
-  background-color: red;
+  background-color: #B2030B;
 }
 
 .result#miss {
-  background-color: white;
+  background-color: #007F00;
 }
 
 img {
   margin-left: -19.5px;
   position: absolute;
-
-  
 }
 
 .fleet-board-cell-content {
   height: 40px;
   width: 40px;
   border-style: solid;
-  border-color: black;
+  border-color: #361BB2;
   border-width: 1px;
   background-color: #33CCFF;
 }

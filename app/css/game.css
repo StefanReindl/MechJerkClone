@@ -22,7 +22,7 @@ border-radius: 50%;
 position: absolute;
 margin-left: -19.5px;
 margin-top: 1px;
-z-index: 50;
+z-index: 5;
 }
 
 header {
@@ -206,36 +206,31 @@ img {
   height: 32px;
   position: relative;
   background-color: #5E5E5E;
-  -moz-border-radius: 150px / 0px;
-  -webkit-border-radius: 20px / 20px;
-  border-radius: 90px / 30px;
 }
 
-#corvette {
+#minesweeper {
   width: 72px;
-  border-radius: 99% / 90%;
+  border-radius: 300% / 300%;
 }
 
 #frigate {
   width: 112px;
-  border-radius: 90% / 60%;
+  border-radius: 4px 60% 60% 4px;
 }
 
 #destroyer {
   width: 152px;
-  border-radius: 60% / 90%;
+  border-radius: 1000px / 200px;
 }
 
 #cruiser {
   width: 192px;
-  border-radius: 60% / 90%;
+  border-radius: 1000px / 200px;
 }
 
 #carrier {
   width: 232px;
-  -moz-border-radius: 150px / 0px;
-  -webkit-border-radius: 20px / 20px;
-  border-radius: 900px / 50px;
+  border-radius: 1000px / 50px;
 }
 
 button {  

@@ -24,8 +24,8 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   $scope.selfSetup = true;
 
   $scope.ships = {
+    minesweeper: Ship.create("minesweeper", 2),
     frigate: Ship.create("frigate", 3),
-    corvette: Ship.create("corvette", 2),
     destroyer: Ship.create("destroyer", 4),
     cruiser: Ship.create("cruiser", 5),
     carrier: Ship.create("carrier", 6)
@@ -34,11 +34,6 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   // disable draggable on Ready, notify opponent
   $scope.setup = {}
   $scope.setup.ready = function(){
-
-        // for(var i = 0; i < 100; i++) {
-        //   $scope.explosionActive[i] = true
-        // }
-     
     console.log('ready button hit');
     $scope.selfSetup = false;
     if ($scope.waitEnemySetup !== false){

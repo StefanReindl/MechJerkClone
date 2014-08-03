@@ -20,7 +20,7 @@ width: 36px;
 height: 38px;
 position: absolute;
 margin-left: -19.5px;
-
+z-index: 50;
 
 }
 

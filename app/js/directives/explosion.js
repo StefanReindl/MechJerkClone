@@ -14,7 +14,7 @@ angular.module('battleship')
     var particles = [];
 
     //Lets create some particles now
-    var particleCount = 120;
+    var particleCount = 60;
     for(var i = 0; i < particleCount; i++) {
       particles.push(new particle());
     }

@@ -46,19 +46,19 @@ form {
   z-index: 20;
   margin-left: 800px;
 position: absolute;
-margin-top: 147px;
- -webkit-animation: mymove 1.7s alternate infinite; 
+margin-top: 281px;
+ -webkit-animation: mymove 1.6s alternate infinite; 
     animation: mymove 1.5s alternate infinite;
 }
 
 @-webkit-keyframes mymove {
-    from {top: 0px;}
-    to {top: 100px;}
+    from {top: 120px;}
+    to {top: 0px;}
 }
 
 @keyframes mymove {
-    from {top: 0px;}
-    to {top: 100px;}
+    from {top: 120px;}
+    to {top: 0px;}
 }
 
 }

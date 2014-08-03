@@ -37,6 +37,13 @@ form {
 	color: black;
 }
 
+.aloha{
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 50;
+}
 .start {
 	background-color: green;
 	color: white;

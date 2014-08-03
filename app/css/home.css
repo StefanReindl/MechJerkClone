@@ -7,17 +7,20 @@ header {
   background-color: black;
   padding: 10px;
   display: inline-block;
+  font-family: 'Play', sans-serif;
 }
 
 .logo {
   float: left;
   width: auto;
   display: inline-block;
+  margin-top: -10px;
 }
 
 .hero {
 	float: right;
 	margin-right: 20px;
+  margin-top: 8px;
 }
 
 .signin {

@@ -66,7 +66,7 @@ angular.module('battleship')
     var w = setInterval(draw, 0.5);
     setTimeout(function( ) { 
       clearInterval( w );  
-    }, 20000);
+    }, 15000);
 
   };
 

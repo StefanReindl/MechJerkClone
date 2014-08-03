@@ -16,13 +16,13 @@ body {
 }
 
 canvas {
-width: 38px;
-height: 38px;
+width: 36px;
+height: 36px;
 border-radius: 50%;
 position: absolute;
 margin-left: -19.5px;
-z-index: 50;
-
+margin-top: 1px;
+z-index: 5;
 }
 
 header {
@@ -144,7 +144,7 @@ header {
   height: 40px;
   width: 40px;
   border-style: solid;
-  border-color: #339933;
+  border-color: #33FF33;
   border-width: 1px;
   background-color: #003300;
   transition: background-color 1s ease;
@@ -152,11 +152,11 @@ header {
 
 .board-cell-content:hover {
   border-color: white;
-  background-color: #00CC00;
+  background-color: #33FF33;
 }
 
 .result {
-  margin-left: 4.5px;
+  margin-left: 4px;
   margin-top: -15.5px;
   height: 30px;
   width: 30px;
@@ -164,25 +164,27 @@ header {
 }
 
 .result#hit {
-  background-color: red;
+  background-color: #CC0400;
 }
 
 .result#miss {
-  background-color: white;
+  background-color: #007F00;
+}
+
+.result#miss-fleet {
+  background-color: #128AB2;
 }
 
 img {
   margin-left: -19.5px;
   position: absolute;
-
-  
 }
 
 .fleet-board-cell-content {
   height: 40px;
   width: 40px;
   border-style: solid;
-  border-color: black;
+  border-color: #361BB2;
   border-width: 1px;
   background-color: #33CCFF;
 }
@@ -198,43 +200,37 @@ img {
 }
 
 .ship {
-  opacity: 0.9;
 	margin: 30px;
   margin-top: -16px;
   margin-left: 3px;
   height: 32px;
   position: relative;
   background-color: #5E5E5E;
-  -moz-border-radius: 150px / 0px;
-  -webkit-border-radius: 20px / 20px;
-  border-radius: 90px / 30px;
 }
 
-#corvette {
+#minesweeper {
   width: 72px;
-  border-radius: 99% / 90%;
+  border-radius: 300% / 300%;
 }
 
 #frigate {
   width: 112px;
-  border-radius: 90% / 60%;
+  border-radius: 4px 60% 60% 4px;
 }
 
 #destroyer {
   width: 152px;
-  border-radius: 60% / 90%;
+  border-radius: 1000px / 200px;
 }
 
 #cruiser {
   width: 192px;
-  border-radius: 60% / 90%;
+  border-radius: 1000px / 200px;
 }
 
 #carrier {
   width: 232px;
-  -moz-border-radius: 150px / 0px;
-  -webkit-border-radius: 20px / 20px;
-  border-radius: 900px / 50px;
+  border-radius: 1000px / 50px;
 }
 
 button {  

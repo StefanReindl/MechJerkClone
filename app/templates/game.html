@@ -20,7 +20,7 @@
 
 <section class="game">
 
-  <div class='popup'>  
+  <div class='popup'>
     <div id='alert' ng-if="notTurnAlert" class='animated rotateIn'>Wait your turn.</div>
     <div id='alert' ng-if='chooseAgain' class='animated rotateIn'>Cell already shot! Choose again.</div>
     <div id='gameover' ng-if='gameOver' class='animated rotateIn'>GAME OVER</div>
@@ -48,7 +48,7 @@
                   <div class='result animated bounceIn' id='hit'></div>
                 </div>
                 <div ng-if="cell.miss">
-                  <div class='result animated bounceIn' id='miss'></div>
+                  <div class='result animated zoomIn' id='miss'></div>
                 </div>
               </div>
             </td>
@@ -73,13 +73,13 @@
                     <audio controls autoplay>
                       <source src="http://www.eborg2.com/Sounds/Sounds-Explosions/Blast6.wav" type="audio/ogg">
                     </audio>
-                    <canvas explosion ></canvas>
+                    <canvas explosion></canvas>
                   </span>
                   <div ng-if="cell.miss">
                     <audio controls autoplay>
                       <source src="http://www.senderogroup.com/mp3/sounds/alert_drip.wav" type="audio/ogg">
                     </audio>
-                    <div class='result' id='miss'></div>
+                    <div class='result animated zoomIn' id='miss-fleet'></div>
                   </div>
                 </div>
               </td>

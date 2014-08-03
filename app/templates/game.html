@@ -21,9 +21,9 @@
 <section class="game">
 
   <div class='popup'>  
-    <div id='alert' ng-if="notTurnAlert">Wait your turn.</div>
-    <div id='alert' ng-if='chooseAgain'>Cell already shot! Choose again.</div>
-    <div id='gameover' ng-if='gameOver'>GAME OVER</div>
+    <div id='alert' ng-if="notTurnAlert" class='animated rotateIn'>Wait your turn.</div>
+    <div id='alert' ng-if='chooseAgain' class='animated rotateIn'>Cell already shot! Choose again.</div>
+    <div id='gameover' ng-if='gameOver' class='animated rotateIn'>GAME OVER</div>
   </div>
 
   <container class="armada">
@@ -70,11 +70,9 @@
                 <div class="fleet-board-cell-content" id="{{cell.col}},{{cell.row}}">&nbsp
 
                   <span ng-if="cell.hit">
-                      <!-- <img border="0" src="http://www.playcrossbones.com/attachments/Image/pirate_skull_and_crossbones.gif" width="36px" height="38px"> -->
                     <audio controls autoplay>
                       <source src="http://www.eborg2.com/Sounds/Sounds-Explosions/Blast6.wav" type="audio/ogg">
                     </audio>
-
                     <canvas explosion ></canvas>
                   </span>
                   <div ng-if="cell.miss">
@@ -90,7 +88,7 @@
 
       <div class='chat'>
         <ul ng-repeat="msgChat in messages track by $index" on-finish-render >
-          <li>{{ msgChat.username }}: {{ msgChat.content }}</li></br>
+          <li class='animated fadeInRight'>{{ msgChat.username }}: {{ msgChat.content }}</li></br>
         </ul>
       </div> 
     </div>

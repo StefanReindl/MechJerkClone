@@ -8,7 +8,7 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   'use strict';
 
 
-  $scope.explosionActive = []
+  // $scope.explosionActive = []
 
   var user = User.get();
   $scope.user = user;
@@ -35,9 +35,9 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   $scope.setup = {}
   $scope.setup.ready = function(){
 
-        for(var i = 0; i < 100; i++) {
-          $scope.explosionActive[i] = true
-        }
+        // for(var i = 0; i < 100; i++) {
+        //   $scope.explosionActive[i] = true
+        // }
      
     console.log('ready button hit');
     $scope.selfSetup = false;

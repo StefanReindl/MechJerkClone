@@ -37,12 +37,30 @@ form {
 	color: black;
 }
 
+
 .aloha{
   height: 400px;
   width: 400px;
   border-radius: 50%;
   position: absolute;
-  z-index: 50;
+  z-index: 20;
+  margin-left: 800px;
+position: absolute;
+margin-top: 147px;
+ -webkit-animation: mymove 1.7s alternate infinite; 
+    animation: mymove 1.5s alternate infinite;
+}
+
+@-webkit-keyframes mymove {
+    from {top: 0px;}
+    to {top: 100px;}
+}
+
+@keyframes mymove {
+    from {top: 0px;}
+    to {top: 100px;}
+}
+
 }
 .start {
 	background-color: green;

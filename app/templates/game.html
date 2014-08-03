@@ -9,9 +9,9 @@
     <div id='red' ng-show='waitAlert' class='ng-hide'>Wait for incoming shot</div>
     <div id='green' ng-show='selfSetup' class='ng-hide'>Click 'Ready' when ships deployed</div>
     <div id='red' ng-show='waitEnemySetup' class='ng-hide'>Waiting for opponent to deploy</div>
-    <div id='red' ng-show='gameOver' class='ng-hide'>GAME OVER</div>
+    <!-- <div id='red' ng-show='gameOver' class='ng-hide'>GAME OVER</div> -->
     <div id='red' ng-show='loser' class='ng-hide'>You lose!</div>
-    <div id='red' ng-show='winner' class='ng-hide'>You win!</div>
+    <div id='green' ng-show='winner' class='ng-hide'>You win!</div>
   </span>  
 
   <span class='user'>
@@ -24,6 +24,7 @@
   <div class='popup'>  
     <div id='alert' ng-show="notTurnAlert" class="ng-hide">Seriously, dude, wait your turn.</div>
     <div id='alert' ng-show='chooseAgain' class='ng-hide'>Cell already shot! Choose again.</div>
+    <div id='gameover' ng-show='gameOver' class='ng-hide'>GAME OVER</div>
   </div>
 
   <container class="armada">

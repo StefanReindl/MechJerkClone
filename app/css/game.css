@@ -259,7 +259,7 @@ button {
 .chat {
   color: white;
   margin: 5px;
-  height: 150px;
+  height: 190px;
   width: 400px;
   opacity: 0.5;
   overflow-y: hidden;
@@ -267,8 +267,11 @@ button {
   padding-top: 10px;
 }
 
-.chat li {
+ul {
+  margin-left: -15px;
+}
+/*.chat p {
   list-style-type: none;
   float: left;
-}
+}*/
 

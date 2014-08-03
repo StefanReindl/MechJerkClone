@@ -19,7 +19,8 @@
 	  </form>
   </div>
 
-</section> 
+</section>
+
 <div id="ocean">
   <div class="aloha">
   <img src="http://www.animateit.net/data/media/august2009/image008.gif" border="0" alt="Battleship Smiley from AnimateIt.net" /> 
@@ -28,22 +29,32 @@
   <div class="treasure">
     <img src="http://www.animateit.net/data/media/feb2013/Animated%20Gif%20Jewels_Precious%20(26).gif" border="0" alt="Treasure Chest from AnimateIt.net" />
   </div>
+
+  <div class="planet">
+    <img src="http://www.animateit.net/data/media/august2009/pl9.gif" border="0" alt="Red Planet from AnimateIt.net" />
+
+  </div>
+
+  <div class="enterprise">
+     <img src="http://www.animateit.net/data/media/40/boat002.gif" border="0" alt="Pirate Ship from AnimateIt.net" /> 
+
+  </div>
  <!-- <video src="file:///Link685/Desktop/2263676.mp4"></video> -->
- <script>
-   var ocean = document.getElementById("ocean"),
-       waveWidth = 10,
-      waveCount = Math.floor(window.innerWidth/waveWidth),
-      docFrag = document.createDocumentFragment();
+   <script>
+     var ocean = document.getElementById("ocean"),
+         waveWidth = 10,
+        waveCount = Math.floor(window.innerWidth/waveWidth),
+        docFrag = document.createDocumentFragment();
 
-  for(var i = 0; i < waveCount; i++){
-    var wave = document.createElement("div");
-    wave.className += " wave";
-    docFrag.appendChild(wave);
-    wave.style.left = i * waveWidth + "px";
-    wave.style.webkitAnimationDelay = (i/100) + "s";
-  }
+    for(var i = 0; i < waveCount; i++){
+      var wave = document.createElement("div");
+      wave.className += " wave";
+      docFrag.appendChild(wave);
+      wave.style.left = i * waveWidth + "px";
+      wave.style.webkitAnimationDelay = (i/100) + "s";
+    }
 
-  ocean.appendChild(docFrag);
+    ocean.appendChild(docFrag);
 
-</script>
+  </script>
 </div>

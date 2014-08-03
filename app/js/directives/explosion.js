@@ -31,7 +31,7 @@ angular.module('battleship')
       this.location_ = {x: W/2, y: H/2};
 
       //radius range = 10-30
-      this.radius = 10+Math.random()*180;
+      this.radius = 180+Math.random()*100;
     }
 
     function draw() {
@@ -63,7 +63,7 @@ angular.module('battleship')
       }
     }
 
-    var w = setInterval(draw, 33);
+    var w = setInterval(draw, 0.5);
     setTimeout(function( ) { 
       clearInterval( w );  
     }, 20000);

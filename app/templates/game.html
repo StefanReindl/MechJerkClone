@@ -5,13 +5,12 @@
   </span>
   
   <span class="status">
-    <div id='green' ng-show='turnAlert' class='ng-hide'>It's your turn!</div>
-    <div id='red' ng-show='waitAlert' class='ng-hide'>Wait for incoming shot</div>
-    <div id='green' ng-show='selfSetup' class='ng-hide'>Click 'Ready' when ships deployed</div>
-    <div id='red' ng-show='waitEnemySetup' class='ng-hide'>Waiting for opponent to deploy</div>
-    <!-- <div id='red' ng-show='gameOver' class='ng-hide'>GAME OVER</div> -->
-    <div id='red' ng-show='loser' class='ng-hide'>You lose!</div>
-    <div id='green' ng-show='winner' class='ng-hide'>You win!</div>
+    <div id='green' ng-if='turnAlert'>It's your turn!</div>
+    <div id='red' ng-if='waitAlert'>Wait for incoming shot</div>
+    <div id='green' ng-if='selfSetup'>Click 'Ready' when ships deployed</div>
+    <div id='red' ng-if='waitEnemySetup'>Waiting for opponent to deploy</div>
+    <div id='red' ng-if='loser'>You lose!</div>
+    <div id='green' ng-if='winner'>You win!</div>
   </span>  
 
   <span class='user'>
@@ -22,15 +21,15 @@
 <section class="game">
 
   <div class='popup'>  
-    <div id='alert' ng-show="notTurnAlert" class="ng-hide">Seriously, dude, wait your turn.</div>
-    <div id='alert' ng-show='chooseAgain' class='ng-hide'>Cell already shot! Choose again.</div>
-    <div id='gameover' ng-show='gameOver' class='ng-hide'>GAME OVER</div>
+    <div id='alert' ng-if="notTurnAlert">Wait your turn.</div>
+    <div id='alert' ng-if='chooseAgain'>Cell already shot! Choose again.</div>
+    <div id='gameover' ng-if='gameOver'>GAME OVER</div>
   </div>
 
   <container class="armada">
-  	<h4 ng-show='selfSetup' class='ng-hide'> Armada </h4>
+  	<h4 ng-if='selfSetup'> Armada </h4>
     <form class='ready-button'>
-      <button ng-click="setup.ready()" ng-show='selfSetup' class='ng-hide'>Ready!</button>
+      <button ng-click="setup.ready()" ng-if='selfSetup'>Ready!</button>
     </form><br>
   	<br>
     <div id='dock' ng-repeat="ship in ships">

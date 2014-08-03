@@ -254,6 +254,13 @@ button {
   float: left;
   padding-top: 10px;
   display: inline-block;
+}
+
+input[type="text"], textarea {
+  background-color : black;
+  color: white;
+  border-style: none;
+  padding: 5px; 
 } 
 
 .chat {

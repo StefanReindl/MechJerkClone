@@ -2736,6 +2736,7 @@ Copyright (c) 2014 Daniel Eden
 .zoomIn {
   -webkit-animation-name: zoomIn;
   animation-name: zoomIn;
+  -webkit-animation: zoomIn ease 0.25s;
 }
 
 @-webkit-keyframes zoomInDown {

@@ -164,11 +164,15 @@ header {
 }
 
 .result#hit {
-  background-color: #B2030B;
+  background-color: #CC0400;
 }
 
 .result#miss {
   background-color: #007F00;
+}
+
+.result#miss-fleet {
+  background-color: #128AB2;
 }
 
 img {
@@ -196,7 +200,6 @@ img {
 }
 
 .ship {
-  opacity: 0.9;
 	margin: 30px;
   margin-top: -16px;
   margin-left: 3px;

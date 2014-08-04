@@ -25,7 +25,8 @@ audio {
 }
 
 #username[type="text"] {
-  width: 300px;
+  width: 200px;
+  margin: 5px;
 } 
 
 .aloha{

@@ -3,14 +3,19 @@ audio {
   display:none;
 }
 
+h1 {
+  font-size: 69px;
+}
+
 .logo-home{
   margin: 0 auto;
   display: block;
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
 }
 
 .hero {
   margin-right: 20px;
-  margin-top: -45px;
+  margin-top: -56px;
   width: auto;
   display: block;
   position: relative;

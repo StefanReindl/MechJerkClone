@@ -133,7 +133,7 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   });
 
   // show hit on active_user's radarBoard, switch active_user & turn alerts
-  WarSocket.on('hit', function (cell){
+  WarSocket.on('hit returned', function (cell){
     $scope.radarBoard.getCell(cell.row, cell.col).hit = true;
     WarSocket.emit('turn complete');
     active_user = false;
@@ -145,7 +145,7 @@ app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 
   });
 
   // show miss on active_user's radarBoard, switch active_user & turn alerts
-  WarSocket.on('miss', function (cell){
+  WarSocket.on('miss returned', function (cell){
     $scope.radarBoard.getCell(cell.row, cell.col).miss = true;
     WarSocket.emit('turn complete');
     active_user = false;

@@ -218,7 +218,7 @@ img {
 
 #frigate {
   width: 112px;
-  border-radius: 4px 60% 60% 4px;
+  border-radius: 40px 30% 30% 40px;
 }
 
 #destroyer {
@@ -270,7 +270,7 @@ input[type="text"], textarea {
 .chat {
   color: white;
   margin: 5px;
-  height: 150px;
+  height: 220px;
   width: 400px;
   opacity: 0.5;
   overflow-y: hidden;
@@ -278,8 +278,15 @@ input[type="text"], textarea {
   padding-top: 10px;
 }
 
-.chat li {
+ul {
+  margin-top: 0;
+  margin-right: 62px;
+}
+
+.chat ul {
   list-style-type: none;
   float: left;
+  text-align: left;
+
 }
 

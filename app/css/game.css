@@ -218,7 +218,7 @@ img {
 
 #frigate {
   width: 112px;
-  border-radius: 4px 60% 60% 4px;
+  border-radius: 60% 4px 4px 60%;
 }
 
 #destroyer {

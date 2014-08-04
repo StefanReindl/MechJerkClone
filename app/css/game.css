@@ -165,18 +165,22 @@ header {
   height: 30px;
   width: 30px;
   border-radius: 50%;
+  position: absolute;
 }
 
 .result#hit {
   background-color: #CC0400;
+  z-index: 6;
 }
 
 .result#miss {
   background-color: #007F00;
+  z-index: 5;
 }
 
 .result#miss-fleet {
   background-color: #128AB2;
+  z-index: 5;
 }
 
 img {

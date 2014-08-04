@@ -37,6 +37,30 @@ form {
 	color: black;
 }
 
+.aloha{
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 20;
+  margin-left: 800px;
+position: absolute;
+margin-top: 386px;
+ -webkit-animation: mymove 1.7s alternate infinite; 
+    animation: mymove 1.5s alternate infinite;
+}
+
+@-webkit-keyframes mymove {
+    from {top: 120px;}
+    to {top: 0px;}
+}
+
+@keyframes mymove {
+    from {top: 120px;}
+    to {top: 0px;}
+}
+
+}
 .start {
 	background-color: green;
 	color: white;
@@ -65,7 +89,7 @@ form {
 .wave{
   background:#a8e3ff;
   display:inline-block;
-  height:60%;
+  height:90%;
   width:10px;
   position:absolute;
   -webkit-animation-name:             dostuff; 

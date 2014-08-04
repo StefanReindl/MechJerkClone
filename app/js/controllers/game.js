@@ -7,9 +7,6 @@
 app.controller('GameCtrl', ['$scope', '$timeout', '$cookieStore', '$rootScope', 'Board', 'WarSocket', 'User', 'Ship', 'Game', 'Cell', function ($scope, $timeout, $cookieStore, $rootScope, Board, WarSocket, User, Ship, Game, Cell) {
   'use strict';
 
-
-  // $scope.explosionActive = []
-
   var user = User.get();
   $scope.user = user;
   $scope.user = $cookieStore.get('username');

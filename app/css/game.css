@@ -206,6 +206,9 @@ img {
   height: 32px;
   position: relative;
   background-color: #5E5E5E;
+-webkit-box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.75);
+box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.75);
 }
 
 #minesweeper {
@@ -215,7 +218,7 @@ img {
 
 #frigate {
   width: 112px;
-  border-radius: 4px 60% 60% 4px;
+  border-radius: 40px 30% 30% 40px;
 }
 
 #destroyer {
@@ -238,6 +241,7 @@ button {
   color: white;
   border: none;
   display: inline-block;
+  padding: 5px;
   border-radius: 5px;
 }
 
@@ -254,12 +258,19 @@ button {
   float: left;
   padding-top: 10px;
   display: inline-block;
+}
+
+input[type="text"], textarea {
+  background-color : black;
+  color: white;
+  border-style: none;
+  padding: 5px; 
 } 
 
 .chat {
   color: white;
   margin: 5px;
-  height: 150px;
+  height: 220px;
   width: 400px;
   opacity: 0.5;
   overflow-y: hidden;
@@ -267,8 +278,15 @@ button {
   padding-top: 10px;
 }
 
-.chat li {
+ul {
+  margin-top: 0;
+  margin-right: 62px;
+}
+
+.chat ul {
   list-style-type: none;
   float: left;
+  text-align: left;
+
 }
 

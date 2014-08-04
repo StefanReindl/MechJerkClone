@@ -47,6 +47,10 @@ header {
   margin: 0px;
   line-height: 28px;
   margin-left: 20px;
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  color: #ABCFFF;
+  margin-top: 15px; 
+  
 }
 
 .status {
@@ -54,7 +58,7 @@ header {
   width: 360px;
   height: 28px;
   background-color: green;
-  color: white;
+  color: #ABCFFF;
   font-size: 20px;
   display: block;
   margin: 0 auto;
@@ -68,11 +72,13 @@ header {
 
 .user {
   margin-right: 20px;
-  margin-top: -36px;
+  margin-top: -28px;
   width: auto;
   display: block;
   position: relative;
   float: right;
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  color: #ABCFFF;
 }
 
 #alert {
@@ -81,9 +87,9 @@ header {
   top: 27%;
   background-color: red;
   font-size: 30px;
-  color: white;
+  color: #ABCFFF;
   position: absolute;
-  z-index: 6;
+  z-index: 10;
   opacity: 0.8;
   transition: 1.2s all linear;
   padding-top: 3px;
@@ -109,7 +115,7 @@ header {
   font-size: 30px;
   color: white;
   position: absolute;
-  z-index: 1;
+  z-index: 10;
   opacity: 0.8;
   padding-top: 3px;
 }
@@ -165,18 +171,22 @@ header {
   height: 30px;
   width: 30px;
   border-radius: 50%;
+  position: absolute;
 }
 
 .result#hit {
   background-color: #CC0400;
+  z-index: 6;
 }
 
 .result#miss {
   background-color: #007F00;
+  z-index: 5;
 }
 
 .result#miss-fleet {
   background-color: #128AB2;
+  z-index: 5;
 }
 
 img {
@@ -187,9 +197,9 @@ img {
 .fleet-board-cell-content {
   height: 40px;
   width: 40px;
-  border-style: solid;
-  border-color: #361BB2;
-  border-width: 1px;
+  border-style: dotted;
+  border-color: #6200FF;
+  border-width: 2px;
   background-color: #33CCFF;
 }
 
@@ -255,7 +265,7 @@ button {
   display: inline-block;
   padding: 5px;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .ready-button {

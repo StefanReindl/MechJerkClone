@@ -13,7 +13,7 @@
     </span>  
 
     <span class='user'>
-      <h4>Welcome, Admiral {{ user.username }}</h4>
+      <h3>Welcome, Admiral {{ user.username }}</h3>
     </span>
   </div>
 </header>
@@ -34,9 +34,9 @@
             <tr class='board-row' ng-repeat="row in radarBoard.rows">
               <td ng-repeat='cell in row' class="board-cell board-cell_empty">
                 <div ng-click="check(cell)" class="board-cell-content">&nbsp
-                  <div ng-if="cell.hit">
-                    <div class='result animated bounceIn' id='hit'></div>
-                  </div>
+                  <span ng-if="cell.hit">
+                    <div class='result animated lightSpeedIn' id='hit'></div>
+                  </span>
                   <div ng-if="cell.miss">
                     <div class='result animated bounceIn' id='miss'></div>
                   </div>
@@ -86,7 +86,7 @@
       <div id='enemy-dock' ng-if='!selfSetup' ng-repeat='ship in ships'>
         <div class='ship-enemy' id="{{ship.name}}"></div>
       </div>
-      
+
     </container>
   </div>
 

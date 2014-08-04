@@ -88,7 +88,7 @@
 
       <div class='chat'>
         <ul ng-repeat="msgChat in messages track by $index" on-finish-render >
-          <p style="font-size:24px"class='animated fadeInLeft'>{{ msgChat.username }}: {{ msgChat.content }}</br></p>
+          <li style="font-size:24px"class='animated fadeInLeft'>{{ msgChat.username }}: {{ msgChat.content }}</br></li>
         </ul>
       </div> 
     </div>

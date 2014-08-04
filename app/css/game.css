@@ -270,7 +270,7 @@ input[type="text"], textarea {
 .chat {
   color: white;
   margin: 5px;
-  height: 190px;
+  height: 220px;
   width: 400px;
   opacity: 0.5;
   overflow-y: hidden;
@@ -279,10 +279,14 @@ input[type="text"], textarea {
 }
 
 ul {
-  margin-left: -15px;
+  margin-top: 0;
+  margin-right: 62px;
 }
-/*.chat p {
+
+.chat ul {
   list-style-type: none;
   float: left;
-}*/
+  text-align: left;
+
+}
 

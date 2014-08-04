@@ -278,15 +278,12 @@ input[type="text"], textarea {
   padding-top: 10px;
 }
 
-ul {
-  margin-top: 0;
-  margin-right: 62px;
-}
-
 .chat ul {
   list-style-type: none;
   float: left;
-  text-align: left;
-
+  font-size: 24px;
 }
 
+.chat li {
+  margin-right: 100px;
+}

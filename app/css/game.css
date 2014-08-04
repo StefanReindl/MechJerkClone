@@ -58,7 +58,7 @@ header {
   width: 360px;
   height: 28px;
   background-color: green;
-  color: white;
+  color: #ABCFFF;
   font-size: 20px;
   display: block;
   margin: 0 auto;
@@ -72,11 +72,12 @@ header {
 
 .user {
   margin-right: 20px;
-  margin-top: -36px;
+  margin-top: -28px;
   width: auto;
   display: block;
   position: relative;
   float: right;
+  color: #ABCFFF;
 }
 
 #alert {
@@ -85,7 +86,7 @@ header {
   top: 27%;
   background-color: red;
   font-size: 30px;
-  color: white;
+  color: #ABCFFF;
   position: absolute;
   z-index: 10;
   opacity: 0.8;

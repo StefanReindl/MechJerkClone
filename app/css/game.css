@@ -210,6 +210,12 @@ img {
   vertical-align: top;
 	margin-top: 30px;
 	margin-right: 0px;
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  color: #ABCFFF 
+}
+
+h4 {
+font-size: 27px;
 }
 
 .ship {

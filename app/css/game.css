@@ -214,6 +214,15 @@ img {
   box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.50);
 }
 
+.ship-enemy {
+  margin: 30px;
+  margin-top: -16px;
+  margin-left: 3px;
+  height: 32px;
+  position: relative;
+  background-color: #1F1F1F;
+}
+
 #minesweeper {
   width: 72px;
   border-radius: 600% / 600%;

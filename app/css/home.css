@@ -37,45 +37,6 @@ form {
 	color: black;
 }
 
-.treasure {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 20;
-  margin-top: 680px;
-}
-
-.planet {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 20;
-  margin-top: 44px;
-  margin-left: 1201px
-}
-
-.enterprise {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 20;
-  margin-top: 250px;
-  -webkit-animation: vamo 1.6s alternate infinite;
-}
-
-@-webkit-keyframes vamo {
-    from {top: 0px;}
-    to {top: 120px;}
-}
-
-@keyframes vamo {
-    from {top: 0px;}
-    to {top: 120px;}
-}
-
 .aloha{
   height: 400px;
   width: 400px;
@@ -84,8 +45,8 @@ form {
   z-index: 20;
   margin-left: 800px;
 position: absolute;
-margin-top: 331px;
- -webkit-animation: mymove 1.6s alternate infinite; 
+margin-top: 386px;
+ -webkit-animation: mymove 1.7s alternate infinite; 
     animation: mymove 1.5s alternate infinite;
 }
 

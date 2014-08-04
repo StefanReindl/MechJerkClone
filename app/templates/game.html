@@ -56,9 +56,8 @@
       </table>
 
     <div class='msg'>
-        <form>
-          <input id="msg" ng-model="msg" type='text' placeholder="Fraternize with the enemy" size='53px'/>
-          <button ng-click="chatForm.sendChat(msg)">Send</button>
+        <form ng-submit='chatForm.sendChat(msg)' ng-controller='GameCtrl'> 
+          <input id="msg" ng-model="msg" type='text' placeholder="Fraternize with the enemy [hit enter to send]" />
         </form>
       </div>  
     </div>

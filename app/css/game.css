@@ -237,12 +237,13 @@ img {
 }
 
 button {  
-  background: green; 
+  background: #FF6302; 
   color: white;
   border: none;
   display: inline-block;
   padding: 5px;
   border-radius: 5px;
+  font-size: 16px;
 }
 
 .ready-button {
@@ -264,7 +265,10 @@ input[type="text"], textarea {
   background-color : black;
   color: white;
   border-style: none;
-  padding: 5px; 
+  padding: 5px;
+  height: 30px;
+  width: 400px;
+  font-size: 19px;
 } 
 
 .chat {

@@ -1,21 +1,21 @@
 
-<header class='header'>
-  <span class='logo'>
-    <h2>Mechanical Jerk</h2>
-  </span>
-  
-  <span class="status">
-    <div id='green' ng-if='turnAlert'>It's your turn!</div>
-    <div id='red' ng-if='waitAlert'>Wait for incoming shot</div>
-    <div id='green' ng-if='selfSetup'>Click 'Ready' when ships deployed</div>
-    <div id='red' ng-if='waitEnemySetup'>Waiting for opponent to deploy</div>
-    <div id='red' ng-if='loser' class='animated pulse'>You lose!</div>
-    <div id='red' ng-if='winner' class='animated pulse'>You win!</div>
-  </span>  
+<header class='header'><div class='header-content'><span class='logo'>
+      <h2>Mechanical Jerk</h2>
+    </span>
+    
+    <span class="status">
+      <div id='green' ng-if='turnAlert'>It's your turn!</div>
+      <div id='red' ng-if='waitAlert'>Wait for incoming shot</div>
+      <div id='green' ng-if='selfSetup'>Click 'Ready' when ships deployed</div>
+      <div id='red' ng-if='waitEnemySetup'>Waiting for opponent to deploy</div>
+      <div id='red' ng-if='loser' class='animated pulse'>You lose!</div>
+      <div id='red' ng-if='winner' class='animated pulse'>You win!</div>
+    </span>  
 
-  <span class='user'>
-    <h4>Welcome, Admiral {{ user.username }}</h4>
-  </span>
+    <span class='user'>
+      <h4>Welcome, Admiral {{ user.username }}</h4>
+    </span>
+  </div>
 </header>
 
 <section class="game">
@@ -26,70 +26,81 @@
     <div id='gameover' ng-if='gameOver' class='animated rotateIn'>GAME OVER</div>
   </div>
 
-  <container class="armada">
-  	<h4 ng-if='selfSetup'> Armada </h4>
-    <form class='ready-button'>
-      <button ng-click="setup.ready()" ng-if='selfSetup'>Ready!</button>
-    </form><br>
-  	<br>
-    <div id='dock' ng-repeat="ship in ships">
-      <div class='ship' id="{{ship.name}}" ondragstart="drag(event)" draggable='{{selfSetup}}' ></div>
-    </div>
-    
-  </container>
-
-  <section class='boards'>
-    <div class="board radar">
-      <table class="board-table">
-          <tr class='board-row' ng-repeat="row in radarBoard.rows">
-            <td ng-repeat='cell in row' class="board-cell board-cell_empty">
-              <div ng-click="check(cell)" class="board-cell-content">&nbsp
-                <div ng-if="cell.hit">
-                  <div class='result animated bounceIn' id='hit'></div>
-                </div>
-                <div ng-if="cell.miss">
-                  <div class='result animated bounceIn' id='miss'></div>
-                </div>
-              </div>
-            </td>
-          </tr>
-      </table>
-
-    <div class='msg'>
-        <form ng-submit='chatForm.sendChat(msg)' ng-controller='GameCtrl'> 
-          <input id="msg" ng-model="msg" type='text' placeholder="Fraternize with the enemy [hit enter to send]" />
-        </form>
-      </div>  
-    </div>
-
-    <div class="board fleet" >
-      <table class="board-table" ondrop="drop(event)" ondragover="allowDrop(event)">
-          <tr class='board-row' ng-repeat="row in fleetBoard.rows"> 
+  
+  <div>
+    <section class='boards'>
+      <div class="board radar">
+        <table class="board-table">
+            <tr class='board-row' ng-repeat="row in radarBoard.rows">
               <td ng-repeat='cell in row' class="board-cell board-cell_empty">
-                <div class="fleet-board-cell-content" id="{{cell.col}},{{cell.row}}">&nbsp
-
-                  <span ng-if="cell.hit">
-                    <audio controls autoplay>
-                      <source src="http://www.eborg2.com/Sounds/Sounds-Explosions/Blast6.wav" type="audio/ogg">
-                    </audio>
-                    <canvas explosion></canvas>
-                  </span>
+                <div ng-click="check(cell)" class="board-cell-content">&nbsp
+                  <div ng-if="cell.hit">
+                    <div class='result animated bounceIn' id='hit'></div>
+                  </div>
                   <div ng-if="cell.miss">
-                    <audio controls autoplay>
-                      <source src="http://www.senderogroup.com/mp3/sounds/alert_drip.wav" type="audio/ogg">
-                    </audio>
-                    <div class='result animated bounceIn' id='miss-fleet'></div>
+                    <div class='result animated bounceIn' id='miss'></div>
                   </div>
                 </div>
               </td>
-          </tr>
-      </table>
+            </tr>
+        </table>
+      </div>
+      
 
-      <div class='chat'>
-        <ul ng-repeat="msgChat in messages track by $index" on-finish-render >
-          <li class='animated fadeInLeft'>{{ msgChat.username }}: {{ msgChat.content }}</li></br>
-        </ul>
-      </div> 
+      <div class="board fleet" >
+        <table class="board-table" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <tr class='board-row' ng-repeat="row in fleetBoard.rows"> 
+                <td ng-repeat='cell in row' class="board-cell board-cell_empty">
+                  <div class="fleet-board-cell-content" id="{{cell.col}},{{cell.row}}">&nbsp
+
+                    <span ng-if="cell.hit">
+                      <audio controls autoplay>
+                        <source src="http://www.eborg2.com/Sounds/Sounds-Explosions/Blast6.wav" type="audio/ogg">
+                      </audio>
+                      <canvas explosion></canvas>
+                    </span>
+                    <div ng-if="cell.miss">
+                      <audio controls autoplay>
+                        <source src="http://www.senderogroup.com/mp3/sounds/alert_drip.wav" type="audio/ogg">
+                      </audio>
+                      <div class='result animated bounceIn' id='miss-fleet'></div>
+                    </div>
+                  </div>
+                </td>
+            </tr>
+        </table>
+      </div>
+        
+    </section>
+
+    <container class="armada">
+      <h4 ng-if='selfSetup'> Armada </h4>
+      <form class='ready-button'>
+        <button ng-click="setup.ready()" ng-if='selfSetup'>Ready!</button>
+      </form><br>
+      <br>
+      <div id='dock' ng-repeat="ship in ships">
+        <div class='ship' id="{{ship.name}}" ondragstart="drag(event)" draggable='{{selfSetup}}' ></div>
+      </div>
+      <h4 ng-if='!selfSetup'>Enemy ships</h4></br>
+      <div id='enemy-dock' ng-if='!selfSetup' ng-repeat='ship in ships'>
+        <div class='ship ship-enemy' id="{{ship.name}}"></div>
+      </div>
+      
+    </container>
+  </div>
+
+
+  <div class='message-container'>
+    <div class='msg'>
+      <form ng-submit='chatForm.sendChat(msg)' ng-controller='GameCtrl'> 
+        <input id="msg" ng-model="msg" type='text' placeholder="Fraternize with the enemy   [hit enter to send]" />
+      </form>
     </div>
-  </section>
+    <div class='chat'>
+      <ul>
+        <li on-finish-render ng-repeat="msgChat in messages track by $index">{{ msgChat.username }}: {{ msgChat.content }}</li></br>
+      </ul>
+    </div>
+  </div>  
 </section> 

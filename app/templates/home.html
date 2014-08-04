@@ -1,20 +1,21 @@
 
 <section class="home"> 
 
- <header class='header'>
-    <span class='logo'>
-      <h2>Mechanical Jerk</h2>
-    </span>
-    <span class='hero'>
-    	<h4>A battleship game for two adversaries</h4>
-    </span>
+  <header class='header'>
+    <div class='header-contents'><span class='logo'>
+        <h2>Mechanical Jerk</h2>
+      </span>
+      <span class='hero'>
+      	<h4>A battleship game for two adversaries</h4>
+      </span>
+    </div>  
   </header>
 
 
 	<div class="signin">
 		<h3>Enter a username</h3>
 	  <form>
-	    <input id="username" ng-model="username" autocomplete="off" />
+	    <input id="username" type='text' ng-model="username" autocomplete="off" />
 	    <a href="#/game"><button class='start' ng-click="userEnter.enterName(username)">Start</button></a>
 	  </form>
   </div>

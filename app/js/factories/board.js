@@ -11,15 +11,23 @@ app.factory('Board', ['Cell', function (Cell){
           return this.rows[row][col];
         },
         shipDrop: function(ship, cell){
+            console.log(ship.cells.length)
+          if (ship.cells.length > 0) {
+            for (var i = 0; i < ship.length; i++){
+              ship.cells[i].ship = false
+            };
+            ship.cells = [];
+          }
           var col = cell.col;
           var row = cell.row;
           for (var i = col; i < col + ship.length; i++){
             var cell = this.getCell(row, i);
-            console.log(cell);
+            // console.log(cell);
             cell.ship = true
+            ship.cells.push(cell);
           };
           
-          console.log(cell + "full-house")
+          // console.log(cell + "full-house")
           console.log("Warren ! row:" + row + ", col: " + col);
         }
       }

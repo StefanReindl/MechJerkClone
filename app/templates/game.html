@@ -3,14 +3,7 @@
       <h2>Mechanical Jerk</h2>
     </span>
     
-    <span class="status">
-      <div id='green' ng-if='turnAlert'>It's your turn!</div>
-      <div id='red' ng-if='waitAlert'>Wait for incoming shot</div>
-      <div id='green' ng-if='selfSetup'>Click 'Ready' when ships deployed</div>
-      <div id='red' ng-if='waitEnemySetup'>Waiting for opponent to deploy</div>
-      <div id='red' ng-if='loser' class='animated pulse'>You lose!</div>
-      <div id='red' ng-if='winner' class='animated pulse'>You win!</div>
-    </span>  
+ 
 
     <span class='user'>
       <h3>Admiral {{ user.username }}</h3>
@@ -18,7 +11,14 @@
   </div>
 </header>
 
-<section class="game">
+ <div class="status">
+    <div id='green' ng-if='turnAlert'>It's your turn!</div>
+    <div id='red' ng-if='waitAlert'>Wait for incoming shot</div>
+    <div id='green' ng-if='selfSetup'>Click 'Ready' when ships deployed</div>
+    <div id='red' ng-if='waitEnemySetup'>Waiting for opponent to deploy</div>
+    <div id='red' ng-if='loser' class='animated pulse'>You lose!</div>
+    <div id='red' ng-if='winner' class='animated pulse'>You win!</div>
+  </div>  
 
   <div class='popup'>
     <div id='alert' ng-if="notTurnAlert" class='animated rotateIn'>Wait your turn.</div>
@@ -26,7 +26,9 @@
     <div id='gameover' ng-if='gameOver' class='animated rotateIn'>GAME OVER</div>
   </div>
 
-  
+
+<section class="game">
+
   <div>
     <section class='boards'>
       <div class="board radar">

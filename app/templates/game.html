@@ -101,7 +101,7 @@
     </div>
     <div class='chat'>
       <ul>
-        <li on-finish-render ng-repeat="msgChat in messages track by $index">{{ msgChat.username }}: {{ msgChat.content }}</li></br>
+        <li on-finish-render ng-repeat="msgChat in messages track by $index"><span class="usernom">{{ msgChat.username }}:</span> {{ msgChat.content }}</li></br>
       </ul>
     </div>
   </div>  
